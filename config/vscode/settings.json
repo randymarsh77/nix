@@ -1,0 +1,45 @@
+{
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.insertSpaces": false,
+    "terminal.integrated.automationProfile.osx": {
+        "path": "direnv-exec",
+        "env": {
+            "PROJ_DIR": "${workspaceRoot}"
+        }
+    },
+    "lldb.launch.terminal": "console",
+    "[csharp]": {},
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "less.scannerExclude": [
+        "**/.git",
+        "**/bower_components",
+        "**/node_modules/!(@faithlife/bible-study-themes)"
+    ],
+    "prettier.jsonEnable": [],
+    "prettier.printWidth": 100,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "prettier.useTabs": true,
+    "files.associations": {
+        "*.linq": "csharp"
+    },
+    "xml.format.maxLineWidth": 0
+}

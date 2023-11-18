@@ -7,8 +7,8 @@ let
   in {
     x86_64-darwin = {
       url =
-        "https://download.sqlitebrowser.org/DB.Browser.for.SQLite-intel-${version}.dmg";
-      sha256 = "/D7s2lI4BEWa+KMw9i2OEqigeRULRbtZSz8HMpC6wXE=";
+        "https://download.sqlitebrowser.org/DB.Browser.for.SQLite-${version}.dmg";
+      sha256 = "VG1XtsiMK+dRd1nAFsC/AxPfzBSt/LQ5Z/PF0kZX82Y=";
     };
     aarch64-darwin = {
       url =

@@ -43,10 +43,11 @@
       },
       "locked": {
         "dir": "pkgs",
-        "dirtyRev": "9b92a61c0bfad850770fc9114c6febd873ab04af-dirty",
-        "dirtyShortRev": "9b92a61-dirty",
-        "lastModified": 1700332451,
-        "narHash": "sha256-kWUC3W+j7vJ0/ykrsKtcb79woXUncmrphkpE+hoOavU=",
+        "lastModified": 1700334397,
+        "narHash": "sha256-JnQFFEsYeDcdDc7ztNskFWFDoZMvWwlM3m/A6NO5HOs=",
+        "ref": "refs/heads/master",
+        "rev": "f083e387421cabc89d722f3f8d6bd6574b35d975",
+        "revCount": 4,
         "type": "git",
         "url": "file:.?dir=pkgs"
       },

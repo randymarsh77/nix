@@ -1,0 +1,17 @@
+{
+	"Nuget Extensions.shortCircuitPaths": "/Users/matt/Source/nuget-extensions/packages/vscode/tests/projects/TestConsoleApp/TestConsoleApp/bin/Debug/netcoreapp3.1/",
+	"clang-format.executable": "/Users/matt.preucil/Source/llvm-project/build/bin/clang-format",
+	"debug.onTaskErrors": "debugAnyway",
+	"Faithlife.Build Tasks.NugetOutput": "~/nuget-output",
+	"Faithlife.Build Tasks.BuildFlags": "All: --no-test -c Debug",
+	"Faithlife.Build Tasks.BootstrapperScriptPath": "build-sh.[sh|cmd]",
+	"explorer.confirmDelete": false,
+	"workbench.editorAssociations": {
+		"*.icns": "default"
+	},
+	"cSpell.userWords": [
+		"Preucil"
+	],
+	"window.zoomLevel": 1,
+	"lldb.suppressUpdateNotifications": true
+}

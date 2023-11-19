@@ -43,7 +43,6 @@ jobs:
         with:
           name: preucil
           authToken: ${{ secrets.CACHIX_TOKEN }}
-          pushFilter: MySQLWorkbench
 
       - name: If scheduled, update inputs
         if: ${{ github.event_name == 'schedule' && success() }}

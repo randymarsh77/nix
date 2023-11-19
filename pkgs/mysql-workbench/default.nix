@@ -19,7 +19,7 @@ let
 in with util;
 installApplication {
   name = "MySQLWorkbench";
-  version = version;
+  version = "${version}-dist";
   sourceRoot = "MySQLWorkbench.app";
   src = fetchurl urlInfo;
   description = "MySQL Workbench";

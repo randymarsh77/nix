@@ -55,6 +55,7 @@ jobs:
 
       - name: Switch
         run: |
+          mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
           ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
 
       - name: If scheduled, push commit with updated inputs

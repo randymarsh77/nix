@@ -20,11 +20,11 @@ jobs:
     name: Build/cache macOS Nix env
     strategy:
       matrix:
-        os: [macos-11, macos-13-arm64]
+        os: [macos-11, macos-13]
         include:
           - os: macos-11
             flake: ci-x86
-          - os: macos-13-arm64
+          - os: macos-13
             flake: ci-arm
     runs-on: ${{ matrix.os }}
 

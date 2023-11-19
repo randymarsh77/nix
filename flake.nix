@@ -19,7 +19,10 @@
     let
       x86-packages = { pkgs, ... }: {
         # azure-cli is broken on Intel; filter it out.
-        environment.systemPackages = (builtins.filter (x: x != pkgs.azure-cli)
+        # mysql-workbench-dist can't upload to Cachix; filter it out.
+        environment.systemPackages = (builtins.filter (x:
+          x != pkgs.azure-cli && x
+          != localpkgs.packages.x86_64-darwin.mysql-workbench-dist)
           base.constants.x86_64-darwin.default-packages) ++ [ pkgs.cachix ];
       };
       arm-packages = { pkgs, ... }: {

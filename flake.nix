@@ -37,7 +37,7 @@
       ci-arm-packages = { pkgs, ... }: {
         # mysql-workbench-dist can't upload to Cachix; filter it out.
         environment.systemPackages = (builtins.filter
-          (x: x != localpkgs.packages.x86_64-darwin.mysql-workbench-dist)
+          (x: x != localpkgs.packages.aarch64-darwin.mysql-workbench-dist)
           base.constants.aarch64-darwin.default-packages) ++ [ pkgs.cachix ];
       };
       dotfiles = { home }:

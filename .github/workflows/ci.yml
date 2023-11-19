@@ -12,21 +12,19 @@ on:
     paths:
       - '**'
       - '!**.md'
-  schedule:
-    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
 
 jobs:
-  build-macos-env:
-    name: Build/cache macOS Nix env
+  ci:
+    name: CI
     strategy:
       matrix:
-        os: [macos-11, macos-13-xlarge]
+        flake: [ci-x86, ci-arm]
         include:
-          - os: macos-11
-            flake: ci-x86
-          - os: macos-13-xlarge
-            flake: ci-arm
-    runs-on: ${{ matrix.os }}
+          - flake: ci-x86
+            runner: macos-11
+          - flake: ci-arm
+            runner: macos-13-xlarge # This is the only runner with arm64, and it $$$
+    runs-on: ${{ matrix.runner }}
 
     steps:
       - name: Check out
@@ -44,11 +42,6 @@ jobs:
           name: preucil
           authToken: ${{ secrets.CACHIX_TOKEN }}
 
-      - name: If scheduled, update inputs
-        if: ${{ github.event_name == 'schedule' && success() }}
-        run: |
-          nix flake update
-
       - name: Build
         run: |
           nix build .#darwinConfigurations.${{ matrix.flake }}.system
@@ -57,12 +50,3 @@ jobs:
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
           ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
-
-      - name: If scheduled, push commit with updated inputs
-        if: ${{ github.event_name == 'schedule' && success() }}
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git aa
-          git cm "Update inputs"
-          git push

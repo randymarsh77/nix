@@ -38,12 +38,11 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
-      # TODO: Add Cachix support
-      # - name: Setup Cachix
-      #   uses: cachix/cachix-action@v12
-      #   with:
-      #     name: matt
-      #     signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v12
+        with:
+          name: preucil
+          authToken: ${{ secrets.CACHIX_TOKEN }}
 
       - name: If scheduled, update inputs
         if: ${{ github.event_name == 'schedule' && success() }}
@@ -53,6 +52,9 @@ jobs:
       - name: Build
         run: |
           nix build .#darwinConfigurations.${{ matrix.flake }}.system
+
+      - name: Switch
+        run: |
           ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
 
       - name: If scheduled, push commit with updated inputs

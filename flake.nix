@@ -19,12 +19,12 @@
     let
       x86-packages = { pkgs, ... }: {
         # azure-cli is broken on Intel; filter it out.
-        environment.systemPackages = builtins.filter (x: x != pkgs.azure-cli)
-          base.constants.x86_64-darwin.default-packages;
+        environment.systemPackages = (builtins.filter (x: x != pkgs.azure-cli)
+          base.constants.x86_64-darwin.default-packages) ++ [ pkgs.cachix ];
       };
       arm-packages = { pkgs, ... }: {
         environment.systemPackages =
-          base.constants.aarch64-darwin.default-packages;
+          base.constants.aarch64-darwin.default-packages ++ [ pkgs.cachix ];
       };
       dotfiles = { home }:
         { pkgs, ... }: {

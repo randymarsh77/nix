@@ -3,12 +3,18 @@
 { pkgs, ... }:
 
 {
+  nix.settings = {
+    substituters = [ "https://cache.nixos.org/" "https://preucil.cachix.org" ];
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "preucil.cachix.org-1:1Q+jMhn26yxSlYod9JnvhjKcSy4IpdW3eLZ3n3ARZ+0="
+    ];
+    experimental-features = "nix-command flakes";
+  };
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
-
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina

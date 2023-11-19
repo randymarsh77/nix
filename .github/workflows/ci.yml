@@ -43,6 +43,7 @@ jobs:
         with:
           name: preucil
           authToken: ${{ secrets.CACHIX_TOKEN }}
+          pushFilter: MySQLWorkbench
 
       - name: If scheduled, update inputs
         if: ${{ github.event_name == 'schedule' && success() }}
@@ -57,10 +58,6 @@ jobs:
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
           ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
-
-      - name: Fix Cachix
-        run: |
-          sudo nix-store --verify --repair --check-contents
 
       - name: If scheduled, push commit with updated inputs
         if: ${{ github.event_name == 'schedule' && success() }}

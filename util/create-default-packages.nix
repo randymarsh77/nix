@@ -44,7 +44,7 @@ let
     refresh-spotlight
     vscode
     docker-desktop
-    pkgs.mysql-workbench
+    mysql-workbench-dist
     charles
     db-browser
     nitguard

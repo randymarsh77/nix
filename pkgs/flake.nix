@@ -8,7 +8,7 @@
         xcode = final.callPackage ./xcode { };
         dotnet = final.callPackage ./dotnet { };
         pwsh = final.callPackage ./pwsh { };
-        mysql-workbench = final.callPackage ./mysql-workbench { };
+        mysql-workbench-dist = final.callPackage ./mysql-workbench { };
         docker-desktop = final.callPackage ./docker-desktop { };
         charles = final.callPackage ./charles { };
         db-browser = final.callPackage ./db-browser { };
@@ -34,7 +34,7 @@
           xcode = pkgs.xcode;
           dotnet = pkgs.dotnet;
           pwsh = pkgs.pwsh;
-          mysql-workbench = pkgs.mysql-workbench;
+          mysql-workbench-dist = pkgs.mysql-workbench-dist;
           docker-desktop = pkgs.docker-desktop;
           charles = pkgs.charles;
           db-browser = pkgs.db-browser;

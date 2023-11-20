@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
+
+jobs:
+  flake-input:
+    name: Update Flake Inputs
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v22
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v12
+        with:
+          name: preucil
+          authToken: ${{ secrets.CACHIX_TOKEN }}
+
+      - name: Update
+        if: ${{ github.event_name == 'schedule' && success() }}
+        run: |
+          nix flake update
+
+      - name: Build
+        run: |
+          nix build .#darwinConfigurations.ci-x86.system
+
+      - name: Switch
+        run: |
+          sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
+          ./result/sw/bin/darwin-rebuild switch --flake .#ci-x86
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: Update flake.lock
+          title: Update Inputs
+          labels: allow-auto-merge
+          branch: update-flake-inputs

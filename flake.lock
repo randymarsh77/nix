@@ -64,18 +64,19 @@
       },
       "locked": {
         "dir": "pkgs",
-        "lastModified": 1700462696,
-        "narHash": "sha256-7trTQXc3R7JH6s1JfkPE9lfFE6CBh/LeFQfMmmMwQ78=",
-        "ref": "refs/heads/master",
-        "rev": "098f88563fc97ba3d7a8824f8212ab14a05f9998",
-        "revCount": 27,
-        "type": "git",
-        "url": "file:.?dir=pkgs"
+        "lastModified": 1700462936,
+        "narHash": "sha256-9S+4B8bRnEI7EHROSvLuzbS2wmQBchl+Q9wojkzz5hs=",
+        "owner": "randymarsh77",
+        "repo": "nix",
+        "rev": "866b727a55c7a78398e9d5cb6b630c51644f0660",
+        "type": "github"
       },
       "original": {
         "dir": "pkgs",
-        "type": "git",
-        "url": "file:.?dir=pkgs"
+        "owner": "randymarsh77",
+        "ref": "master",
+        "repo": "nix",
+        "type": "github"
       }
     },
     "nixpkgs": {

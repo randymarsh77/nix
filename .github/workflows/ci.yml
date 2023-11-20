@@ -20,8 +20,8 @@ jobs:
         include:
           - flake: ci-x86
             runner: macos-11
-          - flake: ci-arm
-            runner: macos-13-xlarge # This is the only runner with arm64, and it $$$
+          # - flake: ci-arm
+          #   runner: macos-13-xlarge # This is the only runner with arm64, and it $$$
     runs-on: ${{ matrix.runner }}
 
     steps:

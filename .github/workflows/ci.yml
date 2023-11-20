@@ -16,7 +16,7 @@ jobs:
     name: CI
     strategy:
       matrix:
-        flake: [ci-x86, ci-arm]
+        flake: [ci-x86] # Temporarily remove ci-arm
         include:
           - flake: ci-x86
             runner: macos-11

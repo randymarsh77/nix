@@ -6,7 +6,7 @@
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    localpkgs.url = "git+file:.?dir=pkgs";
+    localpkgs.url = "github:randymarsh77/nix/master?dir=pkgs";
     localpkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 

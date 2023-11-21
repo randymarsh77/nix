@@ -1,12 +1,12 @@
-{ nixpkgs, pkgs }:
+{ nixpkgs }:
 with nixpkgs;
-with pkgs;
 let
   defaultPackages = [
     # Essentials
     direnv
     direnv-exec
     nixfmt
+    cachix
     git
 
     # Cloud

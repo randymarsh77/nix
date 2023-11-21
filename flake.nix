@@ -5,55 +5,53 @@
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    localpkgs.url = "github:randymarsh77/nix/master?dir=pkgs";
-    localpkgs.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils, darwin, localpkgs }:
+  outputs = { self, nixpkgs, flake-utils, darwin }:
     with nixpkgs;
-    let
+    let localOverlay = import ./pkgs/default.nix;
+    in let
       myLib = import ./lib/lib.nix { };
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-darwin" "aarch64-darwin" ]
         (system:
           import nixpkgs {
             inherit system;
+            overlays = [ localOverlay ];
             config.allowUnfree = true;
           });
     in let
       base = flake-utils.lib.eachDefaultSystem (system: {
-        packages = localpkgs;
+        packages = legacyPackages;
         constants = rec {
           default-packages =
             (import ./util/util.nix { }).create-default-packages {
               nixpkgs = legacyPackages.${system};
-              pkgs = localpkgs.packages.${system};
             };
         };
       });
     in let
-      x86-packages = { pkgs, ... }: {
+      intel-packages = { pkgs, ... }: {
         # azure-cli is broken on Intel; filter it out.
         environment.systemPackages = (builtins.filter (x: x != pkgs.azure-cli)
-          base.constants.x86_64-darwin.default-packages) ++ [ pkgs.cachix ];
+          base.constants.x86_64-darwin.default-packages);
       };
       arm-packages = { pkgs, ... }: {
         environment.systemPackages =
-          base.constants.aarch64-darwin.default-packages ++ [ pkgs.cachix ];
+          base.constants.aarch64-darwin.default-packages;
       };
-      ci-x86-packages = { pkgs, ... }: {
+      ci-intel-packages = { pkgs, ... }: {
         # azure-cli is broken on Intel; filter it out.
         # mysql-workbench-dist can't upload to Cachix; filter it out.
         environment.systemPackages = (builtins.filter (x:
-          x != pkgs.azure-cli && x
-          != localpkgs.packages.x86_64-darwin.mysql-workbench-dist)
-          base.constants.x86_64-darwin.default-packages) ++ [ pkgs.cachix ];
+          x != pkgs.azure-cli
+          && (x != legacyPackages.x86_64-darwin.mysql-workbench-dist))
+          base.constants.x86_64-darwin.default-packages);
       };
       ci-arm-packages = { pkgs, ... }: {
         # mysql-workbench-dist can't upload to Cachix; filter it out.
         environment.systemPackages = (builtins.filter
-          (x: x != localpkgs.packages.aarch64-darwin.mysql-workbench-dist)
-          base.constants.aarch64-darwin.default-packages) ++ [ pkgs.cachix ];
+          (x: x != legacyPackages.aarch64-darwin.mysql-workbench-dist)
+          base.constants.aarch64-darwin.default-packages);
       };
 
       dotfiles = { home }:
@@ -72,14 +70,14 @@
         x = darwin.lib.darwinSystem {
           modules = [
             (import ./darwin/bootstrap.nix { hostPlatform = "x86_64-darwin"; })
-            x86-packages
+            intel-packages
             (dotfiles { home = "/Users/matt"; })
           ];
         };
-        ci-x86 = darwin.lib.darwinSystem {
+        ci-intel = darwin.lib.darwinSystem {
           modules = [
             (import ./darwin/bootstrap.nix { hostPlatform = "x86_64-darwin"; })
-            ci-x86-packages
+            ci-intel-packages
           ];
         };
         ci-arm = darwin.lib.darwinSystem {

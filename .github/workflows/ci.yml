@@ -16,7 +16,7 @@ jobs:
     name: CI
     strategy:
       matrix:
-        flake: [ci-intel ci-arm]
+        flake: [ci-intel, ci-arm]
         include:
           - flake: ci-intel
             runner: macos-11

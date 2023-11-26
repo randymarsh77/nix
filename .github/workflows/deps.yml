@@ -33,12 +33,12 @@ jobs:
 
       - name: Build
         run: |
-          nix build .#darwinConfigurations.ci-x86.system
+          nix build .#darwinConfigurations.ci-intel.system
 
       - name: Switch
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
-          ./result/sw/bin/darwin-rebuild switch --flake .#ci-x86
+          ./result/sw/bin/darwin-rebuild switch --flake .#ci-intel
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v5

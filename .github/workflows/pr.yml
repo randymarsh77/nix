@@ -2,7 +2,6 @@ name: PR
 
 on:
   pull_request:
-    branches: [x]
     types: [opened, synchronize, reopened, labeled, unlabeled]
 
 jobs:
@@ -12,5 +11,6 @@ jobs:
       - uses: peter-evans/enable-pull-request-automerge@v3
         if: contains(github.event.pull_request.labels.*.name, 'allow-auto-merge')
         with:
+          token: ${{ secrets.PR_TOKEN }}
           pull-request-number: ${{ github.event.pull_request.number }}
           merge-method: rebase

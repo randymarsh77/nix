@@ -46,3 +46,4 @@ jobs:
           title: Update Inputs
           labels: allow-auto-merge
           branch: update-flake-inputs
+          token: ${{ secrets.PR_TOKEN }}

@@ -27,7 +27,6 @@ jobs:
           authToken: ${{ secrets.CACHIX_TOKEN }}
 
       - name: Update
-        if: ${{ github.event_name == 'schedule' && success() }}
         run: |
           nix flake update
 

@@ -54,11 +54,28 @@
         "type": "github"
       }
     },
+    "nixpkgsWithNewerDotnet": {
+      "locked": {
+        "lastModified": 1700081557,
+        "narHash": "sha256-ZnZlvUpwaT5CYJeIVJaTAk788VpVLgj22D+g8OeWhV0=",
+        "owner": "mdarocha",
+        "repo": "nixpkgs",
+        "rev": "aa7e324b9168c1b2e15698d6e53d22f4f98634f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mdarocha",
+        "ref": "dotnet-update",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgsWithNewerDotnet": "nixpkgsWithNewerDotnet"
       }
     },
     "systems": {

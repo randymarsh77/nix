@@ -5,17 +5,25 @@
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixpkgsWithNewerDotnet.url = "github:mdarocha/nixpkgs/dotnet-update";
   };
 
-  outputs = { self, nixpkgs, flake-utils, darwin }:
+  outputs = { self, nixpkgs, flake-utils, darwin, nixpkgsWithNewerDotnet }:
     with nixpkgs;
-    let localOverlay = import ./pkgs/default.nix;
+    let
+      localOverlay = import ./pkgs/default.nix;
+      dotnetOverlay = { system }:
+        (final: prev: {
+          dotnetCorePackages =
+            nixpkgsWithNewerDotnet.legacyPackages.${system}.dotnetCorePackages;
+        });
     in let
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-darwin" "aarch64-darwin" ]
         (system:
           import nixpkgs {
             inherit system;
-            overlays = [ localOverlay ];
+            overlays = [ localOverlay (dotnetOverlay { inherit system; }) ];
             config.allowUnfree = true;
           });
     in let
@@ -44,9 +52,9 @@
     in let
       base-intel =
         (import ./darwin/bootstrap.nix { hostPlatform = "x86_64-darwin"; });
-
       base-arm =
         (import ./darwin/bootstrap.nix { hostPlatform = "aarch64-darwin"; });
+
       ci-intel-packages = { pkgs, ... }: {
         # azure-cli is broken on Intel; filter it out.
         # mysql-workbench-dist can't upload to Cachix; filter it out.

@@ -5,25 +5,17 @@
     nixpkgs.url = "github:NixOS/nixpkgs/master";
     darwin.url = "github:LnL7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixpkgsWithNewerDotnet.url = "github:mdarocha/nixpkgs/dotnet-update";
   };
 
-  outputs = { self, nixpkgs, flake-utils, darwin, nixpkgsWithNewerDotnet }:
+  outputs = { self, nixpkgs, flake-utils, darwin }:
     with nixpkgs;
-    let
-      localOverlay = import ./pkgs/default.nix;
-      dotnetOverlay = { system }:
-        (final: prev: {
-          dotnetCorePackages =
-            nixpkgsWithNewerDotnet.legacyPackages.${system}.dotnetCorePackages;
-        });
+    let localOverlay = import ./pkgs/default.nix;
     in let
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-darwin" "aarch64-darwin" ]
         (system:
           import nixpkgs {
             inherit system;
-            overlays = [ localOverlay (dotnetOverlay { inherit system; }) ];
+            overlays = [ localOverlay ];
             config.allowUnfree = true;
           });
     in let

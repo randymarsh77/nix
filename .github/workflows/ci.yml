@@ -22,7 +22,7 @@ jobs:
           - flake: ci-intel
             runner: macos-11
           - flake: ci-arm
-            runner: macos-13-xlarge # This is the only runner with arm64, and it $$$
+            runner: self-hosted-nix-macOS
     runs-on: ${{ matrix.runner }}
 
     steps:

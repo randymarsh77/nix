@@ -20,7 +20,7 @@
           });
     in let
       base = flake-utils.lib.eachDefaultSystem (system: {
-        packages = legacyPackages;
+        packages = legacyPackages.${system};
         constants = rec {
           default-packages =
             (import ./util/util.nix { }).create-default-packages {

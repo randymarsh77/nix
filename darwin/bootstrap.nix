@@ -18,6 +18,9 @@
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
+  programs.zsh.promptInit =
+    "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+
   programs.fish.enable = true;
 
   # Set Git commit hash for darwin-version.

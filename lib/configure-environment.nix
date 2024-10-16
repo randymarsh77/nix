@@ -9,10 +9,12 @@ let
       ${withShell}
     '');
   zshProfile = builtins.toFile "profile.sh"
-    ((fileContents ../config/shell/zsh.sh) + ''
+    ((fileContents ../config/shell/zsh.zsh) + ''
 
       ${withShell}
     '');
+  p10k = builtins.toFile "p10k.zsh" (fileContents ../config/shell/p10k.zsh);
+
   vscodeSettings = builtins.toFile "settings.json" (builtins.toJSON
     ((builtins.fromJSON (builtins.readFile ../config/vscode/settings.json))
       // (builtins.fromJSON withVSCodeSettings)));
@@ -59,6 +61,7 @@ let
     echo "Configuring shell profiles..."
     install-dot-file ${bashProfile} ${home}/.bash_profile
     install-dot-file ${zshProfile} ${home}/.zshrc
+    install-dot-file ${p10k} ${home}/.p10k.zsh
 
     echo "Copying dotfiles..."
     ${createAllDotFiles}

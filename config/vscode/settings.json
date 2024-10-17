@@ -2,6 +2,7 @@
     "editor.formatOnSave": true,
     "editor.renderWhitespace": "all",
     "editor.insertSpaces": false,
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.automationProfile.osx": {
         "path": "direnv-exec",
         "env": {

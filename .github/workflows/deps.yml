@@ -8,7 +8,7 @@ on:
 jobs:
   flake-input:
     name: Update Flake Inputs
-    runs-on: macos-latest
+    runs-on: macos-14
 
     steps:
       - name: Check out
@@ -32,12 +32,12 @@ jobs:
 
       - name: Build
         run: |
-          nix build .#darwinConfigurations.ci-intel.system
+          nix build .#darwinConfigurations.ci-arm.system
 
       - name: Switch
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
-          ./result/sw/bin/darwin-rebuild switch --flake .#ci-intel
+          ./result/sw/bin/darwin-rebuild switch --flake .#ci-arm
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v5

@@ -40,6 +40,7 @@ let
 
     # Shell
     zsh-powerlevel10k
+    zsh-fzf-tab
 
     # Apps
     # Note: If you change the list of GUI apps that you expect to see in Spotlight,

@@ -25,6 +25,8 @@
 
   programs.fish.enable = true;
 
+  programs.direnv.enable = true;
+
   # Set Git commit hash for darwin-version.
   #   system.configurationRevision = self.rev or self.dirtyRev or null;
 

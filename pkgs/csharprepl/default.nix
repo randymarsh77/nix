@@ -6,7 +6,7 @@ buildDotnetGlobalTool {
 
   nugetSha256 = "sha256-FGaLqRZpNtG7jIzxxhmHxMTQS5KTkG5XX/djQFb9u3Q=";
 
-  dotnet-sdk = dotnetCorePackages.sdk_7_0;
+  dotnet-sdk = dotnetCorePackages.sdk_9_0;
 
   meta = with lib; {
     description =

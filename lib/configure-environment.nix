@@ -71,7 +71,7 @@ let
     mkdir -p "$VSCODE_USER_SETTINGS_DIR"
     install-dot-file ${vscodeSettings} "$VSCODE_USER_SETTINGS_DIR/settings.json"
     VSCODE_SUPPORT_DIR=$(dirname "$VSCODE_USER_SETTINGS_DIR")
-    chown -R $SUDO_USER "$VSCODE_SUPPORT_DIR"
+    chown -R "$SUDO_USER" "$VSCODE_SUPPORT_DIR"
     chmod +w "$VSCODE_SUPPORT_DIR"
 
     echo "Configuring VSCode extensions..."
@@ -79,7 +79,7 @@ let
     mkdir -p "$VSCODE_EXTENSIONS_DIR"
     rsync -av ${vscodeExtensions}/share/vscode/extensions/ "$VSCODE_EXTENSIONS_DIR"
     VSCODE_USER_DIR=$(dirname "$VSCODE_EXTENSIONS_DIR")
-    chown -R $SUDO_USER "$VSCODE_USER_DIR"
+    chown -R "$SUDO_USER" "$VSCODE_USER_DIR"
     chmod +w "$VSCODE_USER_DIR"
     chmod +w "$VSCODE_EXTENSIONS_DIR"
 

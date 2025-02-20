@@ -6,29 +6,34 @@ on:
     - cron: '0 0 * * 0' # Every Sunday at midnight UTC
 
 jobs:
-  flake-input:
-    name: Update Flake Inputs
+  update-dependencies:
+    name: Update Dependencies
     runs-on: macos-14
 
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Nix
-        uses: cachix/install-nix-action@v22
+        uses: cachix/install-nix-action@v27
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Cachix
-        uses: cachix/cachix-action@v12
+        uses: cachix/cachix-action@v15
         with:
           name: preucil
           authToken: ${{ secrets.CACHIX_TOKEN }}
 
-      - name: Update
+      - name: Update Flake Inputs
         run: |
           nix flake update
+
+      - name: Update VSCode Extensions
+        working-directory: ./config/vscode/extensions
+        run: |
+          ./update.sh
 
       - name: Build
         run: |
@@ -36,6 +41,7 @@ jobs:
 
       - name: Switch
         run: |
+          curl --proto '=https' --tlsv1.2 -sSf -L https://github.com/NixOS/nix/raw/master/scripts/sequoia-nixbld-user-migration.sh | bash -
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
           ./result/sw/bin/darwin-rebuild switch --flake .#ci-arm
 

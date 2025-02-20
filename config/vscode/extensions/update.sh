@@ -34,9 +34,9 @@ get_sha256() {
     local name="$2"
     local version="$3"
     
-    # Create a tempdir for the extension download
+    # Create tempdir in home directory
     local exttmp
-    exttmp=$(mktemp -d -t vscode_exts_XXXXXXXX)
+    exttmp=$(mktemp -d "$HOME/.vscode_ext_tmp.XXXXXX")
     
     # Download the extension
     local url="https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
@@ -77,8 +77,9 @@ update_extension() {
         # Update the version and SHA in the file
         local nixfile="${0%/*}/default.nix"
         
-        # Create a temporary file for the sed script
-        local temp_script=$(mktemp)
+        # Create a temporary file for the sed script in home directory
+        local temp_script
+        temp_script=$(mktemp "$HOME/.vscode_sed_tmp.XXXXXX")
         {
             echo "/publisher = \"${publisher}\"/{" # Find publisher line
             echo "  n" # Move to name line

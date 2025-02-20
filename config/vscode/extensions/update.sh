@@ -11,8 +11,8 @@ get_current_version() {
         $0 ~ "publisher = \"" pub "\"" { found = 1 }
         found && $0 ~ "name = \"" n "\"" { name_match = 1 }
         name_match && $0 ~ /version =/ { 
-            match($0, /"([^"]+)"/, arr)
-            print arr[1]
+            split($0, arr, "\"")
+            print arr[2]
             exit
         }
     ' "$nixfile"
@@ -106,13 +106,13 @@ get_all_extensions() {
     # Extract all publisher/name pairs from extensionsFromVscodeMarketplace blocks
     awk '
         /extensionsFromVscodeMarketplace/ { in_block = 1 }
-        in_block && /publisher = "([^"]+)"/ { 
-            match($0, /"([^"]+)"/, arr)
-            publisher = arr[1]
+        in_block && /publisher = "/ {
+            split($0, arr, "\"")
+            publisher = arr[2]
         }
-        in_block && /name = "([^"]+)"/ {
-            match($0, /"([^"]+)"/, arr)
-            print publisher " " arr[1]
+        in_block && /name = "/ {
+            split($0, arr, "\"")
+            print publisher " " arr[2]
         }
     ' "$nixfile"
 }

@@ -47,5 +47,6 @@ jobs:
 
       - name: Switch
         run: |
+          curl --proto '=https' --tlsv1.2 -sSf -L https://github.com/NixOS/nix/raw/master/scripts/sequoia-nixbld-user-migration.sh | bash -
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
           ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}

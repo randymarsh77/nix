@@ -50,15 +50,19 @@
       ci-intel-packages = { pkgs, ... }: {
         # azure-cli is broken on Intel; filter it out.
         # mysql-workbench-dist can't upload to Cachix; filter it out.
+        # tailspin spawns processes in tests; doesn't work in GHA; filter it out.
         environment.systemPackages = (builtins.filter (x:
           x != pkgs.azure-cli
-          && (x != legacyPackages.x86_64-darwin.mysql-workbench-dist))
+          && (x != legacyPackages.x86_64-darwin.mysql-workbench-dist)
+          && (x != pkgs.tailspin))
           base.constants.x86_64-darwin.default-packages);
       };
       ci-arm-packages = { pkgs, ... }: {
         # mysql-workbench-dist can't upload to Cachix; filter it out.
-        environment.systemPackages = (builtins.filter
-          (x: x != legacyPackages.aarch64-darwin.mysql-workbench-dist)
+        # tailspin spawns processes in tests; doesn't work in GHA; filter it out.
+        environment.systemPackages = (builtins.filter (x:
+          x != legacyPackages.aarch64-darwin.mysql-workbench-dist
+          && (x != pkgs.tailspin))
           base.constants.aarch64-darwin.default-packages);
       };
 

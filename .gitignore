@@ -2,3 +2,5 @@
 result
 scratch
 .direnv
+bin/
+obj/

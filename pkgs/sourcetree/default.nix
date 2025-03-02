@@ -1,7 +1,7 @@
 { pkgs }:
 let
   util = import ../util.nix { pkgs = pkgs; };
-  version = "4.2.2_250";
+  version = "4.2.11_271";
 in with util;
 installApplication {
   name = "Sourcetree";
@@ -11,7 +11,7 @@ installApplication {
   src = pkgs.fetchurl {
     url =
       "https://product-downloads.atlassian.com/software/sourcetree/ga/Sourcetree_${version}.zip";
-    sha256 = "f70vdSbJJ7ycWH0kM2bT/NLx6imCO1Rw03S/uGfRR1g=";
+    sha256 = "sha256-bq3Z7p3lwBOEIee4xgo6gcxSjAq1R3dorVKzR8KAdTc=";
   };
   description = "Sourcetree is a free git GUI";
   homepage = "https://www.sourcetreeapp.com";

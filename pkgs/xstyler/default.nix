@@ -2,8 +2,8 @@
 with pkgs;
 buildDotnetGlobalTool {
   pname = "xamlstyler.console";
-  version = "3.2206.4";
-  nugetSha256 = "sha256-SEQt+7hK3DUcIhNOcNublmjcaz3yazPB8LQk9wUjv1o=";
+  version = "3.2501.8";
+  nugetSha256 = "sha256-We/IFFuZ0uw6coE+L+C4iEK9mzzb63QXtRXHbFRPtc0=";
 
   executables = "xstyler";
   dotnet-sdk = dotnetCorePackages.sdk_9_0;

@@ -120,8 +120,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "ms-vscode-remote";
     name = "remote-containers";
-    version = "0.400.0";
-    sha256 = "sha256-UXgyFzzM19Elpdtza6zwXxSGg69ddBwVIe+m0anc9AE=";
+    version = "0.402.0";
+    sha256 = "sha256-6zsr3mdC2hdWwlbxlQxSzY3CR4hg3xPLXydwHh+CQQg=";
   }
   {
     publisher = "ms-vscode";

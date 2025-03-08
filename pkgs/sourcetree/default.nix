@@ -1,3 +1,4 @@
+# nix-update-tool.feed: https://product-downloads.atlassian.com/software/sourcetree/Appcast/SparkleAppcastGroup4.xml
 { pkgs }:
 let
   util = import ../util.nix { pkgs = pkgs; };
@@ -5,8 +6,7 @@ let
 in with util;
 installApplication {
   name = "Sourcetree";
-  version =
-    version; # Update Feed: https://product-downloads.atlassian.com/software/sourcetree/Appcast/SparkleAppcastGroup4.xml
+  version = version;
   sourceRoot = "Sourcetree.app";
   src = pkgs.fetchurl {
     url =

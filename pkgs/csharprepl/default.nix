@@ -1,10 +1,11 @@
+# nix-update-tool.tags: https://github.com/waf/CSharpRepl
 { pkgs }:
 with pkgs;
 buildDotnetGlobalTool {
   pname = "csharprepl";
-  version = "0.6.5";
+  version = "0.6.7";
 
-  nugetSha256 = "sha256-FGaLqRZpNtG7jIzxxhmHxMTQS5KTkG5XX/djQFb9u3Q=";
+  nugetSha256 = "sha256-a0CiU3D6RZp1FF459NIUUry5TFRDgm4FRhqJZNAGYWs=";
 
   dotnet-sdk = dotnetCorePackages.sdk_9_0;
 

@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 
+// Add namespace to avoid conflict with other entry points
 class SourcetreeUpdater
 {
 	// Use current working directory to find default.nix instead of AppDomain.CurrentDomain.BaseDirectory

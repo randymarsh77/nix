@@ -72,8 +72,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "editorconfig";
     name = "editorconfig";
-    version = "0.17.1";
-    sha256 = "sha256-uAuuSr0fIQSgGEHmVGbbnIr4plDn1lFLjvoPbJ0Nhio=";
+    version = "0.17.2";
+    sha256 = "sha256-Xi2+mN6zjIKm0HWxfRAFs2vYkZ10Gv6poR2b2d8XCug=";
   }
   {
     publisher = "jakebathman";
@@ -120,8 +120,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "ms-vscode-remote";
     name = "remote-containers";
-    version = "0.403.0";
-    sha256 = "sha256-3y/YNajhA65SQQp38DVYUHnpWFb0z6ZtPMDU+RdLzEM=";
+    version = "0.404.0";
+    sha256 = "sha256-7rPJruFk3XbDvipIYqYwwsbhofuViXsdtnKihiwRKok=";
   }
   {
     publisher = "ms-vscode";

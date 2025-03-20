@@ -132,8 +132,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "puppet";
     name = "puppet-vscode";
-    version = "1.5.4";
-    sha256 = "sha256-uwQCDudQu0kM6fMMziYVFdC4pjVAMJAq0Bb1EwV0jXE=";
+    version = "1.5.5";
+    sha256 = "sha256-A2Fse+KBUWr+ViQ8JTKoFQAxfYriikhNx1lh5HtLHxc=";
   }
   {
     publisher = "pvasek";

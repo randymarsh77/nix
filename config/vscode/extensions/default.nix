@@ -114,14 +114,14 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "ms-python";
     name = "isort";
-    version = "2023.13.13171013";
-    sha256 = "sha256-UBV9i3LPVv60+toy+kJvESAuJHRmH/uEIwjTidYUXLc=";
+    version = "2025.0.0";
+    sha256 = "sha256-nwt9Pv084jt9nWvxSXLIWu7981UGSbCgVRTrFfJA6q4=";
   }
   {
     publisher = "ms-vscode-remote";
     name = "remote-containers";
-    version = "0.408.0";
-    sha256 = "sha256-k/c0Ylot3DUJ2UNZDozNmDwuaUAZgPWfuVT16h9eZZI=";
+    version = "0.410.0";
+    sha256 = "sha256-Kzu3kKg3ujD4SMNr7mRRkiPg0yyHsH8SBRSqVkyJNCQ=";
   }
   {
     publisher = "ms-vscode";

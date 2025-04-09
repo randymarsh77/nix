@@ -114,8 +114,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "ms-python";
     name = "isort";
-    version = "2025.1.10971008";
-    sha256 = "sha256-xJ0chidwq481/lt/V3TXLogac32QKziEWm1LppEtpDc=";
+    version = "2025.1.10981008";
+    sha256 = "sha256-4KxVW4ymdxVXbPJBBcdcgWlzL9YxNOKBPMtaC8NCsUA=";
   }
   {
     publisher = "ms-vscode-remote";

@@ -72,8 +72,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "editorconfig";
     name = "editorconfig";
-    version = "0.17.2";
-    sha256 = "sha256-Xi2+mN6zjIKm0HWxfRAFs2vYkZ10Gv6poR2b2d8XCug=";
+    version = "0.17.4";
+    sha256 = "sha256-MYPYhSKAxgaZ0UijxU+xiO4HDPLtXGymhN+2YmTev8M=";
   }
   {
     publisher = "jakebathman";
@@ -114,14 +114,14 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "ms-python";
     name = "isort";
-    version = "2025.1.10981008";
-    sha256 = "sha256-4KxVW4ymdxVXbPJBBcdcgWlzL9YxNOKBPMtaC8NCsUA=";
+    version = "2025.1.11191009";
+    sha256 = "sha256-kBfylmprgESvrwh/Yibl/ly825Vdj7GdXQGmg17K0iU=";
   }
   {
     publisher = "ms-vscode-remote";
     name = "remote-containers";
-    version = "0.412.0";
-    sha256 = "sha256-doAOyPtC54t0NBYNmV1S5ZoARIX1pcvRhbFXYSMKoSY=";
+    version = "0.418.0";
+    sha256 = "sha256-0tEqPThr/xNPlWJ546RnhKlCASAfquFZioCzrakNgb4=";
   }
   {
     publisher = "ms-vscode";
@@ -168,8 +168,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "waderyan";
     name = "gitblame";
-    version = "11.1.2";
-    sha256 = "sha256-TlvMyFmtJQtpsjbdh3bPiRaMHro0M7gKOgtGc2bQLN4=";
+    version = "11.1.3";
+    sha256 = "sha256-r+fmb382hzxD7frrsNZTJk6uPahO7QBfKTJWA0ObWFI=";
   }
   {
     publisher = "mathiasfrohlich";

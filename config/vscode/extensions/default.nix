@@ -23,24 +23,29 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
 }] ++ map (loadAfter [ "cab404.vscode-direnv" ]) ([
   arrterian.nix-env-selector
   bbenoist.nix
+  bierner.markdown-mermaid
   brettm12345.nixfmt-vscode
   dbaeumer.vscode-eslint
+  cschleiden.vscode-github-actions # custom
   esbenp.prettier-vscode
   github.copilot
+  github.copilot-chat
   hashicorp.terraform
+  humao.rest-client
   jkillian.custom-local-formatters # Allows you to register arbitrary scripts as formatters
   jock.svg
   ms-azuretools.vscode-docker
   ms-dotnettools.csharp
+  ms-dotnettools.vscode-dotnet-runtime
+  ms-python.isort
   ms-python.python
   ms-python.vscode-pylance
-  rebornix.ruby
   redhat.vscode-xml
   redhat.vscode-yaml
+  shopify.ruby-lsp
   streetsidesoftware.code-spell-checker
   timonwong.shellcheck
   vscode-lldb
-  wingrunr21.vscode-ruby
   wix.vscode-import-cost
   xaver.clang-format
   yzhang.markdown-all-in-one

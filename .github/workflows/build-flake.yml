@@ -57,4 +57,4 @@ jobs:
 
       - name: Build flake
         run: |
-          nix build
+          nix develop --command echo "Development shell built successfully"

@@ -26,7 +26,6 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   bierner.markdown-mermaid
   brettm12345.nixfmt-vscode
   dbaeumer.vscode-eslint
-  cschleiden.vscode-github-actions # custom
   esbenp.prettier-vscode
   github.copilot
   github.copilot-chat

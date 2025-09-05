@@ -1,0 +1,41 @@
+name: Build Flake
+
+on:
+  repository_dispatch:
+    types: [build-flake]
+
+jobs:
+  build-flake:
+    name: Build Flake
+    strategy:
+      matrix:
+        runner: [macos-13, macos-latest]
+        include:
+          - runner: macos-13
+            arch: intel
+          - runner: macos-latest
+            arch: arm
+    runs-on: ${{ matrix.runner }}
+
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v15
+        with:
+          name: preucil
+          authToken: ${{ secrets.CACHIX_TOKEN }}
+
+      - name: Decode and create flake.nix
+        env:
+          FLAKE_CONTENT: ${{ github.event.client_payload.flake }}
+        run: |
+          echo "$FLAKE_CONTENT" | base64 --decode > flake.nix
+
+      - name: Build flake
+        run: |
+          nix build

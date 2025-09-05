@@ -2,6 +2,7 @@ final: prev: {
   sourcetree = final.callPackage ./sourcetree { };
   direnv-exec = final.callPackage ./direnv-exec { };
   refresh-spotlight = final.callPackage ./refresh-spotlight { };
+  remote-build-flake = final.callPackage ./remote-build-flake { };
   xcode = final.callPackage ./xcode { };
   dotnet = final.callPackage ./dotnet { };
   pwsh = final.callPackage ./pwsh { };

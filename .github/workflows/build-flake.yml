@@ -30,11 +30,30 @@ jobs:
           name: preucil
           authToken: ${{ secrets.CACHIX_TOKEN }}
 
-      - name: Decode and create flake.nix
+      - name: Decode and create flake files
         env:
           FLAKE_CONTENT: ${{ github.event.client_payload.flake }}
+          LOCK_CONTENT: ${{ github.event.client_payload.lock }}
         run: |
+          # Decode and create flake.nix
           echo "$FLAKE_CONTENT" | base64 --decode > flake.nix
+          
+          # Decode and create flake.lock if provided
+          if [ -n "$LOCK_CONTENT" ]; then
+            echo "$LOCK_CONTENT" | base64 --decode > flake.lock
+          fi
+          
+          # Log the created files
+          echo "=== flake.nix ==="
+          cat flake.nix
+          echo ""
+          echo "=== flake.lock ==="
+          if [ -f flake.lock ]; then
+            cat flake.lock
+          else
+            echo "(flake.lock not provided)"
+          fi
+          echo ""
 
       - name: Build flake
         run: |

@@ -37,6 +37,7 @@ let
     # Utility
     jq
     tailspin # log highlighting
+    remote-build-flake # custom script to trigger remote flake builds
 
     # Shell
     zsh-powerlevel10k

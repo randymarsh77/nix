@@ -116,12 +116,6 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
     sha256 = "CQxrg+rLfxjYgrXShC4RpS7nTzzsoyvsdM4EdNLIVEY=";
   }
   {
-    publisher = "ms-python";
-    name = "isort";
-    version = "2025.1.10981008";
-    sha256 = "sha256-4KxVW4ymdxVXbPJBBcdcgWlzL9YxNOKBPMtaC8NCsUA=";
-  }
-  {
     publisher = "ms-vscode-remote";
     name = "remote-containers";
     version = "0.412.0";

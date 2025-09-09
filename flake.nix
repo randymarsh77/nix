@@ -67,16 +67,17 @@
       };
 
       dotfiles = lib.makeOverridable
-        ({ home, withVSCodeSettings, withShell, withDotFiles }:
+        ({ primaryUser, home, withVSCodeSettings, withShell, withDotFiles }:
           { pkgs, ... }: {
             system.activationScripts.postActivation.text =
               myLib.configure-environment {
-                inherit home pkgs lib withVSCodeSettings withShell withDotFiles;
+                inherit primaryUser home pkgs lib withVSCodeSettings withShell withDotFiles;
               };
           }) {
-            home = "/Users/matt";
+            primaryUser = "matt";
+            home = "/Users/${primaryUser}";
             withVSCodeSettings =
-              (lib.fileContents ./config/vscode/matt/settings.json);
+              (lib.fileContents ./config/vscode/${primaryUser}/settings.json);
             withShell = "";
             withDotFiles = [ ];
           };

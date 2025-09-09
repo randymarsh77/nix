@@ -31,7 +31,7 @@ install-dot-file @p10k@ @home@/.p10k.zsh
 echo "Copying dotfiles..."
 @createAllDotFiles@
 
-TARGET_USER="${SUDO_USER:-$(whoami)}"
+TARGET_USER=@primaryUser@
 echo "Configuring VSCode user settings for '$TARGET_USER'..."
 VSCODE_USER_SETTINGS_DIR=$(dirname @home@/Library/Application\ Support/Code/User/settings.json)
 mkdir -p "$VSCODE_USER_SETTINGS_DIR"

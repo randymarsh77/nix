@@ -1,4 +1,4 @@
-{ withShell ? "", withVSCodeSettings ? "{}", withDotFiles ? [ ], home, pkgs, lib
+{ withShell ? "", withVSCodeSettings ? "{}", withDotFiles ? [ ], primaryUser, home, pkgs, lib
 }:
 with pkgs;
 with lib;
@@ -39,6 +39,7 @@ let
     "@zshProfile@"
     "@p10k@"
     "@createAllDotFiles@"
+    "@primaryUser@"
     "@home@"
     "@vscodeSettings@"
     "@vscodeExtensions@"
@@ -47,6 +48,7 @@ let
     "${zshProfile}"
     "${p10k}"
     "${createAllDotFiles}"
+    "${primaryUser}"
     "${home}"
     "${vscodeSettings}"
     "${vscodeExtensions}"

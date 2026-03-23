@@ -1,26 +1,18 @@
 { pkgs }:
 with pkgs;
-let
-  util = import ../../util.nix { pkgs = pkgs; };
-  version = "2023.1.EAP6";
-  urlInfo = let
-  in {
-    x86_64-darwin = {
-      url =
-        "https://download.jetbrains.com/resharper/dotUltimate.${version}/JetBrains.dotCover.CommandLineTools.macos-x64.${version}.Checked.tar.gz";
-      sha256 = "sha256-yspNLlxZOhxTK7tE1DinbwkeFvLOeRZiOP0tQWDm3xs=";
+buildDotnetGlobalTool {
+  pname = "JetBrains.dotCover.CommandLineTools";
+  version = "2025.3.3";
+  nugetSha256 = "sha256-IHt4HL2CyHgQSbf1peFuxzEe1XpdVCtbK5CgOyTPEBg=";
+
+  executables = "dotcover";
+
+  meta = with lib; {
+    description = "JetBrains dotCover command line tools";
+    homepage = "https://www.jetbrains.com/dotcover/";
+    license = {
+      fullName = "JetBrains dotUltimate License";
+      url = "https://www.jetbrains.com/legal/docs/toolbox/license_personal/";
     };
-    aarch64-darwin = {
-      url =
-        "https://download.jetbrains.com/resharper/dotUltimate.${version}/JetBrains.dotCover.CommandLineTools.macos-arm64.${version}.Checked.tar.gz";
-      sha256 = "sha256-Rldosi1mOxo0pC5hV6+pLcz8GVUsPFnPflEtfQXvTEY=";
-    };
-  }.${system} or (throw "Unsupported system: ${system}");
-in with util;
-installExecutableBundle {
-  name = "dotcover";
-  version = version;
-  src = fetchurl urlInfo;
-  description = "Dot Cover";
-  homepage = "https://www.jetbrains.com/resharper/nextversion";
+  };
 }

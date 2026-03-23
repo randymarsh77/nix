@@ -23,6 +23,7 @@ let
     dotcover
     dotmemory
     dottrace
+    resharper
     pwsh
     xstyler # xaml formatting
 
@@ -54,4 +55,5 @@ let
     db-browser
     nitguard
   ];
-in defaultPackages
+in
+defaultPackages

@@ -17,4 +17,5 @@ final: prev: {
   dotcover = final.callPackage ./resharper-tools/dotcover { };
   dotmemory = final.callPackage ./resharper-tools/dotmemory { };
   dottrace = final.callPackage ./resharper-tools/dottrace { };
+  resharper = final.callPackage ./resharper-tools/resharper { };
 }

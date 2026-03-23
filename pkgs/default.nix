@@ -18,4 +18,12 @@ final: prev: {
   dotmemory = final.callPackage ./resharper-tools/dotmemory { };
   dottrace = final.callPackage ./resharper-tools/dottrace { };
   resharper = final.callPackage ./resharper-tools/resharper { };
+
+  cb = final.callPackage ./cb { };
+  ghpr = final.callPackage ./ghpr { };
+  fork-me = final.callPackage ./fork-me { };
+  nbgv = final.callPackage ./nbgv { };
+  central-pkg-converter = final.callPackage ./central-pkg-converter { };
+  orchard = final.callPackage ./orchard { };
+  discard-permission-only-changes = final.callPackage ./discard-permission-only-changes { };
 }

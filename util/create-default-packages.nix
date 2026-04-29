@@ -8,6 +8,10 @@ let
     nixfmt
     cachix
     git
+    git-lfs
+    gh
+    git-absorb
+    fzf
 
     # Cloud
     azure-cli
@@ -24,21 +28,40 @@ let
     dotmemory
     dottrace
     resharper
+    nbgv
+    central-pkg-converter
     pwsh
     xstyler # xaml formatting
 
     # JS
     nodejs
     yarn
+    bun
+
+    # Go
+    go
+    goreleaser
+    gopls
+    delve
 
     # macOS
     xcode
     xcpretty
+    tart
+    orchard
 
     # Utility
     jq
     tailspin # log highlighting
     remote-build-flake # custom script to trigger remote flake builds
+    fork-me
+    cb
+    ghpr
+    discard-permission-only-changes
+    dl-gha-logs
+    mitmproxy
+    packer
+    ollama
 
     # Shell
     zsh-powerlevel10k
@@ -54,6 +77,8 @@ let
     charles
     db-browser
     nitguard
+    sourcetree
+    slack
   ];
 in
 defaultPackages

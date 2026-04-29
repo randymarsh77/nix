@@ -26,4 +26,5 @@ final: prev: {
   central-pkg-converter = final.callPackage ./central-pkg-converter { };
   orchard = final.callPackage ./orchard { };
   discard-permission-only-changes = final.callPackage ./discard-permission-only-changes { };
+  dl-gha-logs = final.callPackage ./dl-gha-logs { };
 }

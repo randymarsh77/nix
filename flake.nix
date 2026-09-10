@@ -2,8 +2,8 @@
   description = "Useful macOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
-    darwin.url = "github:LnL7/nix-darwin/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    darwin.url = "github:LnL7/nix-darwin/nix-darwin-26.05";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 

@@ -344,12 +344,147 @@ class NixUpdateTool
 
 	static async Task<string> GetSHA256(string version, AppInfo appInfo)
 	{
+		// First check if this is a NuGet package
+		string nixContent = await File.ReadAllTextAsync(appInfo.FilePath);
+		bool isNuGetPackage = nixContent.Contains("buildDotnetGlobalTool");
+
+		if (isNuGetPackage)
+		{
+			Console.WriteLine("Detected buildDotnetGlobalTool package, using NuGet SHA calculation");
+			return await GetNuGetPackageSHA256(appInfo.FilePath, version);
+		}
+
 		return appInfo.UpdateType switch
 		{
 			UpdateType.SparkleXmlFeed => await GetSHA256ForDirectDownload(version, appInfo.FilePath),
 			UpdateType.GitHubTags => await GetSHA256ForGitHubRelease(version, appInfo.FeedUrl),
 			_ => throw new Exception($"Unsupported update type: {appInfo.UpdateType}")
 		};
+	}
+
+	static async Task<string> GetNuGetPackageSHA256(string nixFilePath, string version)
+	{
+		try
+		{
+			// Extract package name from nix file
+			string nixContent = await File.ReadAllTextAsync(nixFilePath);
+
+			var pnameMatch = Regex.Match(nixContent, @"pname\s*=\s*""([^""]+)""");
+			if (!pnameMatch.Success)
+			{
+				throw new Exception("Could not find pname in NuGet package definition");
+			}
+
+			string pname = pnameMatch.Groups[1].Value;
+			Console.WriteLine($"NuGet package: {pname} version {version}");
+
+			// Create temporary directory
+			string tempDir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+			Directory.CreateDirectory(tempDir);
+
+			try
+			{
+				// Step 1: Get the exact package ID (correct casing) from NuGet API
+				string packageIdLower = pname.ToLower();
+				string nugetApiUrl = $"https://api.nuget.org/v3/registration5-semver1/{packageIdLower}/{version}.json";
+
+				Console.WriteLine($"Finding package ID from {nugetApiUrl}");
+
+				string exactPackageId;
+				try
+				{
+					// Fetch package metadata to get exact ID
+					string packageInfo = await _httpClient.GetStringAsync(nugetApiUrl);
+					var infoOptions = new JsonSerializerOptions
+					{
+						PropertyNameCaseInsensitive = true
+					};
+
+					var document = JsonDocument.Parse(packageInfo);
+					var idProp = document.RootElement.GetProperty("id");
+					exactPackageId = idProp.GetString();
+
+					if (string.IsNullOrEmpty(exactPackageId))
+					{
+						// If ID not found, fall back to provided name
+						exactPackageId = pname;
+					}
+				}
+				catch (Exception)
+				{
+					// If metadata lookup fails, just use the provided name
+					exactPackageId = pname;
+					Console.WriteLine($"Package metadata lookup failed, using {pname} as package ID");
+				}
+
+				// Step 2: Construct the download URL and download the .nupkg file
+				string downloadUrl = $"https://api.nuget.org/v3-flatcontainer/{exactPackageId.ToLower()}/{version}/{exactPackageId}.{version}.nupkg";
+				string nupkgPath = Path.Combine(tempDir, $"{exactPackageId}.{version}.nupkg");
+
+				Console.WriteLine($"Downloading from {downloadUrl}");
+
+				using (var response = await _httpClient.GetAsync(downloadUrl))
+				{
+					response.EnsureSuccessStatusCode();
+					using var fileStream = File.Create(nupkgPath);
+					await response.Content.CopyToAsync(fileStream);
+				}
+
+				// Step 3: Calculate the hash using nix-hash (using bash only for this part)
+				var startInfo = new ProcessStartInfo
+				{
+					FileName = "nix-hash",
+					Arguments = $"--type sha256 --base64 \"{nupkgPath}\"",
+					RedirectStandardOutput = true,
+					RedirectStandardError = true,
+					UseShellExecute = false,
+					CreateNoWindow = true
+				};
+
+				using var process = Process.Start(startInfo);
+				var output = await process.StandardOutput.ReadToEndAsync();
+				var error = await process.StandardError.ReadToEndAsync();
+
+				await process.WaitForExitAsync();
+
+				if (process.ExitCode != 0)
+				{
+					throw new Exception($"Failed to calculate NuGet SHA: {error}");
+				}
+
+				string hash = output.Trim();
+
+				if (string.IsNullOrEmpty(hash))
+				{
+					throw new Exception("Failed to extract NuGet hash");
+				}
+
+				Console.WriteLine($"Generated NuGet package hash: {hash}");
+				return $"sha256-{hash}";
+			}
+			finally
+			{
+				// Clean up the temporary directory and its contents
+				if (Directory.Exists(tempDir))
+				{
+					try
+					{
+						Console.WriteLine($"Cleaning up temporary directory: {tempDir}");
+						Directory.Delete(tempDir, true);
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Warning: Failed to clean up temporary directory: {ex.Message}");
+					}
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			Console.Error.WriteLine($"Error calculating NuGet SHA256: {ex.Message}");
+			Console.Error.WriteLine(ex.StackTrace);
+			throw;
+		}
 	}
 
 	static async Task<string> GetSHA256ForGitHubRelease(string version, string repoApiUrl)
@@ -544,14 +679,20 @@ class NixUpdateTool
 			nixContent = Regex.Replace(nixContent, @"version\s*=\s*""[^""]+""", $@"version = ""{version}""");
 
 			// Check for the patterns in the file
-			bool hasNugetSha = nixContent.Contains("nugetSha256");
-			bool hasRegularSha = nixContent.Contains("sha256 =") && !hasNugetSha;
+			bool hasNugetSha256 = nixContent.Contains("nugetSha256");
+			bool hasNugetHash = nixContent.Contains("nugetHash");
+			bool hasRegularSha = nixContent.Contains("sha256 =") && !hasNugetSha256 && !hasNugetHash;
 
 			// Replace the appropriate SHA256 pattern
-			if (hasNugetSha)
+			if (hasNugetSha256)
 			{
 				Console.WriteLine("Replacing nugetSha256 pattern");
 				nixContent = Regex.Replace(nixContent, @"nugetSha256\s*=\s*""[^""]+""", $@"nugetSha256 = ""{sha}""");
+			}
+			else if (hasNugetHash)
+			{
+				Console.WriteLine("Replacing nugetHash pattern");
+				nixContent = Regex.Replace(nixContent, @"nugetHash\s*=\s*""[^""]+""", $@"nugetHash = ""{sha}""");
 			}
 			else if (hasRegularSha)
 			{

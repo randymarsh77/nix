@@ -434,7 +434,7 @@ class NixUpdateTool
 				var startInfo = new ProcessStartInfo
 				{
 					FileName = "nix-hash",
-					Arguments = $"--type sha256 --base64 \"{nupkgPath}\"",
+					Arguments = $"--flat --type sha256 --base64 \"{nupkgPath}\"",
 					RedirectStandardOutput = true,
 					RedirectStandardError = true,
 					UseShellExecute = false,
@@ -641,7 +641,7 @@ class NixUpdateTool
 		var startInfo = new ProcessStartInfo
 		{
 			FileName = "/bin/bash",
-			Arguments = $"-c \"curl -L '{url}' | nix-hash --type sha256 --base64 /dev/stdin\"",
+			Arguments = $"-c \"curl -L '{url}' | nix-hash --flat --type sha256 --base64 /dev/stdin\"",
 			RedirectStandardOutput = true,
 			RedirectStandardError = true,
 			UseShellExecute = false,

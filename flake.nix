@@ -42,9 +42,12 @@
       intel-packages =
         { pkgs, ... }:
         {
+          # Drop packages not available on Intel (e.g. orchard).
           # azure-cli is broken on Intel; filter it out.
           environment.systemPackages = (
-            builtins.filter (x: x != pkgs.azure-cli) base.constants.x86_64-darwin.default-packages
+            builtins.filter (
+              x: lib.meta.availableOn pkgs.stdenv.hostPlatform x && x != pkgs.azure-cli
+            ) base.constants.x86_64-darwin.default-packages
           );
         };
       arm-packages =
@@ -63,13 +66,15 @@
       ci-intel-packages =
         { pkgs, ... }:
         {
+          # Drop packages not available on Intel (e.g. orchard).
           # azure-cli is broken on Intel; filter it out.
           # mysql-workbench-dist can't upload to Cachix; filter it out.
           # tailspin spawns processes in tests; doesn't work in GHA; filter it out.
           environment.systemPackages = (
             builtins.filter (
               x:
-              x != pkgs.azure-cli
+              lib.meta.availableOn pkgs.stdenv.hostPlatform x
+              && x != pkgs.azure-cli
               && (x != legacyPackages.x86_64-darwin.mysql-workbench-dist)
               && (x != pkgs.tailspin)
             ) base.constants.x86_64-darwin.default-packages

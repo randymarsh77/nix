@@ -27,7 +27,7 @@ in vscode-utils.buildVscodeMarketplaceExtension rec {
   };
 
   vsix = fetchurl {
-    name = "${mktplcRef.publisher}-${mktplcRef.name}.zip";
+    name = "${mktplcRef.publisher}-${mktplcRef.name}.vsix";
     inherit (vsixInfo) url sha256;
   };
 

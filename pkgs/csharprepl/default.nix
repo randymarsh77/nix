@@ -10,8 +10,7 @@ buildDotnetGlobalTool {
   dotnet-sdk = dotnetCorePackages.sdk_10_0;
 
   meta = with lib; {
-    description =
-      "A cross-platform command line REPL for the rapid experimentation and exploration of C#. It supports intellisense, installing NuGet packages, and referencing local .NET projects and assemblies.";
+    description = "A cross-platform command line REPL for the rapid experimentation and exploration of C#. It supports intellisense, installing NuGet packages, and referencing local .NET projects and assemblies.";
     homepage = "https://github.com/waf/CSharpRepl";
     changelog = "https://github.com/waf/CSharpRepl/releases/tag/v${version}";
     license = licenses.mpl20;

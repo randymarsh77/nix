@@ -2,8 +2,8 @@
 with pkgs;
 buildDotnetGlobalTool {
   pname = "JetBrains.ReSharper.GlobalTools";
-  version = "2025.3.3";
-  nugetSha256 = "sha256-0UnVAYwDl6sOV08SgQUuJu5wypf4uJvBnoPwYWX6G30=";
+  version = "2026.1.1";
+  nugetSha256 = "sha256-OvUvJNfjHSFg0+kDW/nM0iR5HptvTQocjs4kfiTYXUY=";
 
   dotnet-sdk = dotnetCorePackages.sdk_8_0;
 
@@ -15,7 +15,7 @@ buildDotnetGlobalTool {
     changelog = "https://www.jetbrains.com/resharper/whatsnew/";
     license = {
       fullName = "License Agreement for ReSharper Command Line Tools";
-      url = "https://www.nuget.org/packages/JetBrains.ReSharper.GlobalTools/2025.3.3/License";
+      url = "https://www.nuget.org/packages/JetBrains.ReSharper.GlobalTools/2026.1.1/License";
     };
   };
 }

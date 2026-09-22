@@ -2,8 +2,8 @@
 with pkgs;
 buildDotnetGlobalTool {
   pname = "JetBrains.dotCover.CommandLineTools";
-  version = "2025.3.3";
-  nugetSha256 = "sha256-IHt4HL2CyHgQSbf1peFuxzEe1XpdVCtbK5CgOyTPEBg=";
+  version = "2026.1.1";
+  nugetSha256 = "sha256-UGchlwvyAwN36r5ZNZ5dbRerrd7AfAteNe+Lyf01r30=";
 
   executables = "dotcover";
 

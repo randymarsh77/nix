@@ -3,11 +3,11 @@
 with pkgs;
 buildDotnetGlobalTool {
   pname = "csharprepl";
-  version = "0.6.7";
+  version = "0.6.8";
 
-  nugetSha256 = "sha256-a0CiU3D6RZp1FF459NIUUry5TFRDgm4FRhqJZNAGYWs=";
+  nugetSha256 = "sha256-TleKXF0oaLGJkpuYUADX87eAJYXwdOkZHAVUYWHTWhs=";
 
-  dotnet-sdk = dotnetCorePackages.sdk_9_0;
+  dotnet-sdk = dotnetCorePackages.sdk_10_0;
 
   meta = with lib; {
     description =

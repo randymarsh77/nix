@@ -42,7 +42,7 @@
       intel-packages =
         { pkgs, ... }:
         {
-          # Drop packages not available on Intel (e.g. orchard).
+          # Drop packages not available on Intel.
           # azure-cli is broken on Intel; filter it out.
           environment.systemPackages = (
             builtins.filter (
@@ -66,7 +66,7 @@
       ci-intel-packages =
         { pkgs, ... }:
         {
-          # Drop packages not available on Intel (e.g. orchard).
+          # Drop packages not available on Intel.
           # azure-cli is broken on Intel; filter it out.
           # mysql-workbench-dist can't upload to Cachix; filter it out.
           # tailspin spawns processes in tests; doesn't work in GHA; filter it out.

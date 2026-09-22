@@ -15,7 +15,7 @@ let
         "https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-${version}-macos-arm64.dmg";
       sha256 = "rqZ8OTVNdsOPLprKQ5Db5PdezD8SEQ/1mL8vxG9Iv4w=";
     };
-  }.${system} or (throw "Unsupported system: ${system}");
+  }.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 in with util;
 installApplication {
   name = "MySQLWorkbench";

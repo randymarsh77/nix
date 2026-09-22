@@ -16,7 +16,7 @@ let
         "https://desktop.docker.com/mac/main/arm64/${urlVersion}/Docker.dmg";
       sha256 = "MQGTSjsGKzc6Iv2ZTXQ/pqCPqAVpWDnmtjvC0o689Zo=";
     };
-  }.${system} or (throw "Unsupported system: ${system}");
+  }.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 in with util;
 installXZCompressedApplication {
   name = "Docker";

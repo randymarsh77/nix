@@ -14,7 +14,7 @@ let
         sha256 = "sha256-JWxP89L8syqvbL98HPKpmndSGmzKWSEZhuKnbwZVXFY=";
       };
     }
-    .${system} or (throw "Unsupported system: ${system}");
+    .${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 in
 with util;
 installExecutableBundle {

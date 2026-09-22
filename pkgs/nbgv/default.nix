@@ -2,9 +2,9 @@
 with pkgs;
 buildDotnetGlobalTool {
   pname = "nbgv";
-  version = "3.6.133";
+  version = "3.9.50";
 
-  nugetSha256 = "sha256-bpTE8OdGaGdCj87DuIuuP3y/shNnpI4xaIkDefGpSIk=";
+  nugetSha256 = "sha256-ocB4KY5c7Gxi9fm2p9TGIQTXq7B8AmLRcbgeKgIudEU=";
 
   meta = with lib; {
     description = "This is a .NET tool that provides CLI access to Nerdbank.GitVersioning functions.";

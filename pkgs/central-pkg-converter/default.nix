@@ -2,8 +2,8 @@
 with pkgs;
 buildDotnetGlobalTool {
   pname = "CentralisedPackageConverter";
-  version = "1.0.67";
-  nugetSha256 = "sha256-0AGZvIskj//kvaTBKfI8MgS0omZYx8z6haz/aDOmJuM=";
+  version = "1.0.74";
+  nugetSha256 = "sha256-byMgF9JsLJzOqBMrnfB/35y1iTM++zMe4V1BZkDr2Rs=";
 
   executables = "central-pkg-converter";
 

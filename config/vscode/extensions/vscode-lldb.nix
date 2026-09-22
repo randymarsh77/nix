@@ -3,19 +3,19 @@ with pkgs;
 with pkgs.vscode-extensions;
 let
   inherit (stdenv.hostPlatform) system;
-  version = "1.8.1";
+  version = "1.12.2";
 
   vsixInfo = let
   in {
     x86_64-darwin = {
       url =
-        "https://github.com/vadimcn/vscode-lldb/releases/download/v${version}/codelldb-x86_64-darwin.vsix";
-      sha256 = "FzWpvnmS7w+NibkNw1LlmivEG+ZJBERI5M2WbdAOBU0=";
+        "https://github.com/vadimcn/vscode-lldb/releases/download/v${version}/codelldb-darwin-x64.vsix";
+      sha256 = "sha256-gnCjQpKb3A3rbX05McCNW6YBgmX4QN0FCMQkf7jTLo0=";
     };
     aarch64-darwin = {
       url =
-        "https://github.com/vadimcn/vscode-lldb/releases/download/v${version}/codelldb-aarch64-darwin.vsix";
-      sha256 = "IOvVjrnzDjWCC9fnDcsq0dbcn7Xo9W9+/B67+WeeGEU=";
+        "https://github.com/vadimcn/vscode-lldb/releases/download/v${version}/codelldb-darwin-arm64.vsix";
+      sha256 = "sha256-yDa4HG8tpGe1kgo3anv8hJ3EtNgbGXed7fHGhctKoaA=";
     };
   }.${system} or (throw "Unsupported system: ${system}");
 
@@ -27,9 +27,13 @@ in vscode-utils.buildVscodeMarketplaceExtension rec {
   };
 
   vsix = fetchurl {
-    name = "${mktplcRef.publisher}-${mktplcRef.name}.vsix";
+    name = "${mktplcRef.publisher}-${mktplcRef.name}.zip";
     inherit (vsixInfo) url sha256;
   };
+
+  # Newer stdenv only unpacks `.zip` archives when `unzip` is available, and it
+  # has no unpacker for a `.vsix` extension at all.
+  nativeBuildInputs = [ unzip ];
 
   meta = with lib; {
     description = "A native debugger extension for VSCode based on LLDB";

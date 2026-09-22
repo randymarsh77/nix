@@ -76,8 +76,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "editorconfig";
     name = "editorconfig";
-    version = "0.17.2";
-    sha256 = "sha256-Xi2+mN6zjIKm0HWxfRAFs2vYkZ10Gv6poR2b2d8XCug=";
+    version = "0.18.2";
+    sha256 = "sha256-y8A3D/IEvBbYSj7mgwU2/AQ1WFb6DolasGThoDz8uEo=";
   }
   {
     publisher = "jakebathman";
@@ -118,8 +118,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "ms-vscode-remote";
     name = "remote-containers";
-    version = "0.412.0";
-    sha256 = "sha256-doAOyPtC54t0NBYNmV1S5ZoARIX1pcvRhbFXYSMKoSY=";
+    version = "0.460.0";
+    sha256 = "sha256-ViTtgEteKTXgf8CBgjiEuH7jX85q/hDmgO7lGXPqr5w=";
   }
   {
     publisher = "ms-vscode";
@@ -130,8 +130,8 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "puppet";
     name = "puppet-vscode";
-    version = "1.5.5";
-    sha256 = "sha256-A2Fse+KBUWr+ViQ8JTKoFQAxfYriikhNx1lh5HtLHxc=";
+    version = "1.5.6";
+    sha256 = "sha256-OmOJYYXLpg7CIL41NVZcIyvv+cyQnAO/3FCnP9KTA00=";
   }
   {
     publisher = "pvasek";
@@ -160,14 +160,14 @@ in vscode-utils.extensionsFromVscodeMarketplace [{
   {
     publisher = "vsls-contrib";
     name = "codetour";
-    version = "0.0.59";
-    sha256 = "sha256-dGcARuJ1HLWYwrz2T0HMos2vYxJCMJp8u0RzrDsw6NY=";
+    version = "0.0.61";
+    sha256 = "sha256-xs7j0Bt5FCJcuVfFQojxIFIbAC3QQYwMhGTRuk79PsE=";
   }
   {
     publisher = "waderyan";
     name = "gitblame";
-    version = "11.1.2";
-    sha256 = "sha256-TlvMyFmtJQtpsjbdh3bPiRaMHro0M7gKOgtGc2bQLN4=";
+    version = "13.0.1";
+    sha256 = "sha256-N0UgWdwGj3NW4x0Ea+jKL5Jvp0YE+HfK5tkUjmynPuY=";
   }
   {
     publisher = "mathiasfrohlich";

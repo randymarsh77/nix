@@ -2,19 +2,19 @@
 with pkgs;
 let
   util = import ../util.nix { pkgs = pkgs; };
-  version = "4.16.0";
-  urlVersion = "95345";
+  version = "4.73.0";
+  urlVersion = "226246";
   urlInfo = let
   in {
     x86_64-darwin = {
       url =
         "https://desktop.docker.com/mac/main/amd64/${urlVersion}/Docker.dmg";
-      sha256 = "T6lekLbDlACUOyY65aobtttbJgQ90BSMTjfTAzp1TTM=";
+      sha256 = "sha256-qIpjtMdNXoXJ1B7JtAZUcriBLA49+2PjH92j07Emios=";
     };
     aarch64-darwin = {
       url =
         "https://desktop.docker.com/mac/main/arm64/${urlVersion}/Docker.dmg";
-      sha256 = "MQGTSjsGKzc6Iv2ZTXQ/pqCPqAVpWDnmtjvC0o689Zo=";
+      sha256 = "sha256-Xwi14+fjPMp8NkpYWxW86klHFZYGRTCVqKCbzA/UQAU=";
     };
   }.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 in with util;

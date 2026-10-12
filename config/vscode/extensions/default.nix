@@ -12,7 +12,6 @@
   "editorconfig.editorconfig"
   "esbenp.prettier-vscode"
   "github.copilot"
-  "github.copilot-chat"
   "hashicorp.terraform"
   "humao.rest-client"
   "jakebathman.mysql-syntax"

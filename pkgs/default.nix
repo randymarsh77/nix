@@ -13,6 +13,7 @@ final: prev: {
   nitguard = final.callPackage ./nitguard { };
   csharprepl = final.callPackage ./csharprepl { };
   xstyler = final.callPackage ./xstyler { };
+  peekaboo = final.callPackage ./peekaboo { };
 
   dotcover = final.callPackage ./resharper-tools/dotcover { };
   dotmemory = final.callPackage ./resharper-tools/dotmemory { };

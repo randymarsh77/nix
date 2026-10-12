@@ -49,6 +49,7 @@ let
     xcpretty
     tart
     orchard
+    peekaboo
 
     # Utility
     jq

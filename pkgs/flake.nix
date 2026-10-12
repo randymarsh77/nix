@@ -1,5 +1,11 @@
 {
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      ...
+    }:
     {
       overlays.default = final: prev: {
         sourcetree = final.callPackage ./sourcetree { };
@@ -16,18 +22,22 @@
         nitguard = final.callPackage ./nitguard { };
         csharprepl = final.callPackage ./csharprepl { };
         xstyler = final.callPackage ./xstyler { };
+        peekaboo = final.callPackage ./peekaboo { };
 
         dotcover = final.callPackage ./resharper-tools/dotcover { };
         dotmemory = final.callPackage ./resharper-tools/dotmemory { };
         dottrace = final.callPackage ./resharper-tools/dottrace { };
       };
-    } // flake-utils.lib.eachDefaultSystem (system:
+    }
+    // flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ self.overlays.default ];
         };
-      in {
+      in
+      {
         packages = {
           sourcetree = pkgs.sourcetree;
           direnv-exec = pkgs.direnv-exec;
@@ -46,7 +56,9 @@
           dotmemory = pkgs.dotmemory;
           dottrace = pkgs.dottrace;
           xstyler = pkgs.xstyler;
+          peekaboo = pkgs.peekaboo;
           default = pkgs.hello;
         };
-      });
+      }
+    );
 }

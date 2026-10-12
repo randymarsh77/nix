@@ -23,7 +23,6 @@ let
 
     # .NET
     csharprepl
-    dotnet
     dotcover
     dotmemory
     dottrace

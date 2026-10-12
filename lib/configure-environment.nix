@@ -18,10 +18,8 @@ let
   vscodeSettings = builtins.toFile "settings.json" (builtins.toJSON
     ((builtins.fromJSON (builtins.readFile ../config/vscode/settings.json))
       // (builtins.fromJSON withVSCodeSettings)));
-  vscodeExtensions = buildEnv {
-    name = "vscode-extensions";
-    paths = (import ../config/vscode/extensions { pkgs = pkgs; });
-  };
+  vscodeExtensionIds = builtins.toFile "vscode-extension-ids"
+    ((concatStringsSep "\n" (import ../config/vscode/extensions)) + "\n");
 
   createAllDotFiles = concatStrings (map ({ path, contents }:
     let
@@ -31,9 +29,6 @@ let
       install-dot-file "${source}" "${destination}";
     '') withDotFiles);
 
-  # Avoid vscode-with-extensions, which wraps code using --extensions-dir to a root-owned nix store.
-  # Instead, copy the results of an equivalently built nix store into user-land and chown it.
-  # Apply the same strategy for settings.
   script = builtins.replaceStrings [
     "@bashProfile@"
     "@zshProfile@"
@@ -42,7 +37,8 @@ let
     "@primaryUser@"
     "@home@"
     "@vscodeSettings@"
-    "@vscodeExtensions@"
+    "@vscodeCommand@"
+    "@vscodeExtensionIds@"
   ] [
     "${bashProfile}"
     "${zshProfile}"
@@ -51,6 +47,7 @@ let
     "${primaryUser}"
     "${home}"
     "${vscodeSettings}"
-    "${vscodeExtensions}"
+    "${pkgs.vscode}/bin/code"
+    "${vscodeExtensionIds}"
   ] (builtins.readFile ./configure-environment.sh);
 in script

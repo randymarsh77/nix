@@ -41,8 +41,23 @@ chown -R "$TARGET_USER" "$VSCODE_SUPPORT_DIR"
 chmod +w "$VSCODE_SUPPORT_DIR"
 
 echo "Configuring VSCode extensions..."
+INSTALLED_EXTENSIONS=$(sudo -u "$TARGET_USER" env HOME=@home@ NODE_OPTIONS=--disable-warning=DEP0169 \
+  @vscodeCommand@ --list-extensions)
+INSTALL_ARGUMENTS=()
 while IFS= read -r EXTENSION_ID; do
   [ -z "$EXTENSION_ID" ] && continue
-  sudo -u "$TARGET_USER" env HOME=@home@ @vscodeCommand@ \
-    --install-extension "$EXTENSION_ID" --force
+  if ! grep -Fxiq -- "$EXTENSION_ID" <<< "$INSTALLED_EXTENSIONS"; then
+    INSTALL_ARGUMENTS+=(--install-extension "$EXTENSION_ID")
+  fi
 done < @vscodeExtensionIds@
+
+if [ ${#INSTALL_ARGUMENTS[@]} -gt 0 ]; then
+  sudo -u "$TARGET_USER" env HOME=@home@ NODE_OPTIONS=--disable-warning=DEP0169 \
+    @vscodeCommand@ "${INSTALL_ARGUMENTS[@]}"
+else
+  echo "All configured VSCode extensions are installed."
+fi
+
+echo "Updating installed VSCode extensions..."
+sudo -u "$TARGET_USER" env HOME=@home@ NODE_OPTIONS=--disable-warning=DEP0169 \
+  @vscodeCommand@ --update-extensions

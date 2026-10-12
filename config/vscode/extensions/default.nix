@@ -11,7 +11,6 @@
   "dbaeumer.vscode-eslint"
   "editorconfig.editorconfig"
   "esbenp.prettier-vscode"
-  "github.copilot"
   "hashicorp.terraform"
   "humao.rest-client"
   "jakebathman.mysql-syntax"

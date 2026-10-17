@@ -35,6 +35,8 @@ in
   # Auto upgrade nix package and the daemon service.
   nix.package = pkgs.nix;
 
+  environment.systemPath = [ "/usr/local/share/dotnet" ];
+
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
   programs.zsh.promptInit = ''

@@ -52,6 +52,7 @@ jobs:
     needs: [verify, publish]
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         flake: [ci-intel, ci-arm]
     steps:

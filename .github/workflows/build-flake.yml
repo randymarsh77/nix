@@ -32,7 +32,7 @@ jobs:
         with:
           persist-credentials: false
       - uses: ./.github/actions/install-nix
-      - uses: randymarsh77/static-nix-cache/setup@3caa318ea6a4b25bc92b4de0fadfb58a5fbf516d
+      - uses: randymarsh77/static-nix-cache/setup@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
 
       - name: Decode and create flake files
         env:
@@ -71,7 +71,7 @@ jobs:
           SIGNING_KEY: ${{ secrets.NIX_CACHE_SIGNING_KEY }}
         run: test -n "$SIGNING_KEY"
       - name: Publish store paths
-        uses: randymarsh77/static-nix-cache/deploy@3caa318ea6a4b25bc92b4de0fadfb58a5fbf516d
+        uses: randymarsh77/static-nix-cache/deploy@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
         with:
           github-token: ${{ github.token }}
           signing-key: ${{ secrets.NIX_CACHE_SIGNING_KEY }}

@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: randymarsh77/static-nix-cache
-          ref: 3caa318ea6a4b25bc92b4de0fadfb58a5fbf516d
+          ref: adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:

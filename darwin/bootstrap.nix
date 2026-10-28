@@ -24,10 +24,10 @@ let
 in
 {
   nix.settings = {
-    substituters = [ "https://cache.nixos.org/" "https://preucil.cachix.org" ];
+    substituters = [ "https://cache.nixos.org/" "https://randymarsh77.github.io/nix" ];
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "preucil.cachix.org-1:1Q+jMhn26yxSlYod9JnvhjKcSy4IpdW3eLZ3n3ARZ+0="
+      (builtins.replaceStrings [ "\n" ] [ "" ] (builtins.readFile ../.github/cache/public-key))
     ];
     experimental-features = "nix-command flakes";
   };

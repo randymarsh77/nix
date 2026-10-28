@@ -1,0 +1,36 @@
+name: Publish Cache Index
+on:
+  workflow_call:
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: randymarsh77/static-nix-cache
+          ref: 15b4a5698f482018c72fcbcaf89ec5db3d51fabf
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+      - name: Reconstruct metadata from every release shard
+        run: node generate-static.js
+        env:
+          STORAGE_BACKEND: github-releases
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_OWNER: randymarsh77
+          GITHUB_REPO: nix
+          GITHUB_RELEASE_TAG: nix-cache
+          LOCAL_STORAGE_PATH: ${{ runner.temp }}/cache-index
+          OUTPUT_DIR: public
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
+        id: deployment

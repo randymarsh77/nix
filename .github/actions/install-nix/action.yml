@@ -1,0 +1,14 @@
+name: Install Nix with the project cache
+description: Configure the signed project cache alongside cache.nixos.org
+runs:
+  using: composite
+  steps:
+    - id: key
+      shell: bash
+      run: echo "public-key=$(cat .github/cache/public-key)" >> "$GITHUB_OUTPUT"
+    - uses: cachix/install-nix-action@v27
+      with:
+        extra_nix_config: |
+          access-tokens = github.com=${{ github.token }}
+          extra-substituters = https://randymarsh77.github.io/nix
+          extra-trusted-public-keys = ${{ steps.key.outputs.public-key }}

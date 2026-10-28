@@ -1,0 +1,126 @@
+{
+  "archetype-gojira": {
+    "aarch64-darwin": {
+      "kind": "pkg",
+      "sha256": "dd9b0a257a4dd8fe52ceb785a84d9c539cec8e6f08a5c660dfb86e53f6b017a1",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/archetype-gojira/v_1.0.1/mac/Archetype%20Gojira%20v1.0.1.pkg",
+      "version": "1.0.1"
+    },
+    "x86_64-darwin": {
+      "kind": "pkg",
+      "sha256": "5add316683b70bd041ea5a9f26b2a50c7b392b7d98987f0b32eec69140889e74",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/archetype-gojira/v_1.0.0/mac/Archetype%20Gojira%20v1.0.0.pkg",
+      "version": "1.0.0"
+    }
+  },
+  "archetype-tim-henson": {
+    "aarch64-darwin": {
+      "kind": "pkg",
+      "sha256": "ad339d7feea1e783a626ff6ffaa47b2e0821bbc74761081475845171d182a606",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/archetype-tim-henson/v_1.0.1/Archetype%20Tim%20Henson%20v1.0.1.pkg",
+      "version": "1.0.1"
+    },
+    "x86_64-darwin": {
+      "kind": "pkg",
+      "sha256": "3180bbc292c34a30195e3e5d7b1d883219805189c2f84f513fc6bf1eef64ccc9",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/archetype-tim-henson/v_1.0.0/mac/Archetype%20Tim%20Henson%20v1.0.0.pkg",
+      "version": "1.0.0"
+    }
+  },
+  "darkglass-ultra": {
+    "aarch64-darwin": {
+      "kind": "pkg",
+      "sha256": "2e7686830e149f120e78dcb50cb583c3558fc88f9f9c1a79bc131159df8f0f0a",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/darkglass-ultra-installers/v_3.0.1/mac/Darkglass%20Ultra%20Suite%20v3.0.1.pkg",
+      "version": "3.0.1"
+    },
+    "x86_64-darwin": {
+      "kind": "zip",
+      "member": "Darkglass Ultra v3.0.0 mac/Darkglass Ultra v3.0.0.pkg",
+      "sha256": "7e1aabb9215cac5402ed3b929cf450084455703604d87af6c17a5c6eaafeecbc",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/darkglass-ultra-installers/v_3.0.0%20/mac/Darkglass%20Ultra%20v3.0.0%20mac.zip",
+      "version": "3.0.0"
+    }
+  },
+  "fortin-cali-suite": {
+    "aarch64-darwin": {
+      "kind": "pkg",
+      "sha256": "81fda5eb0aa50c9609df659a03b7a7bd124cf5cdad8355cb7c6071c25b1f9091",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/fortin-cali-installers/v_2.0.1/mac/Fortin%20Cali%20Suite%20v2.0.1.pkg",
+      "version": "2.0.1"
+    },
+    "x86_64-darwin": {
+      "kind": "pkg",
+      "sha256": "ce6b6f7aa134f7ac1895067606681dc45ec996bfddbe1ea89cf87e3ee3e646c7",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/fortin-cali-installers/v_1.0.0/mac/Fortin%20Cali%20Suite%20v1.0.0.pkg",
+      "version": "1.0.0"
+    }
+  },
+  "fortin-nameless-suite": {
+    "aarch64-darwin": {
+      "kind": "pkg",
+      "sha256": "2d2322f1af44bf46a045b3d315068840d6ab2a3de0ba36bc06d9cdaca3650d9a",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/fortin-nameless-installers/v_3.0.2/mac/Fortin%20Nameless%20Suite%20v3.0.2.pkg",
+      "version": "3.0.2"
+    },
+    "x86_64-darwin": {
+      "kind": "pkg",
+      "sha256": "5f77c8b9e3eab447177330732de20b955f7b8011b37fc626c58cb392c0c05b4a",
+      "teamId": "W2U54YT9PL",
+      "url": "https://downloads.neuraldsp.com/file/fortin-nameless-installers/v_3.0.1/mac/Fortin%20Nameless%20Suite%20v3.0.1.pkg",
+      "version": "3.0.1"
+    }
+  },
+  "nectar-2": {
+    "x86_64-darwin": {
+      "kind": "dmg",
+      "member": "Double-Click to Install Nectar 2.pkg",
+      "sha256": "427c024634a8c0694fbbb697539c9db9bb62764dc6ce0892e4b7be2fb38dde70",
+      "teamId": "QGULMAPEB2",
+      "url": "https://downloads.izotope.com/product_download/iZotope_Nectar_v2_04a.dmg",
+      "version": "2.0.4"
+    }
+  },
+  "nectar-3": {
+    "aarch64-darwin": {
+      "edition": "Nectar 3 Plus",
+      "kind": "dmg",
+      "member": "Install iZotope Nectar 3 Plus.app",
+      "sha256": "b9fa1761ae9124b1c86ee073f1fb2b5dc9545f81b29fbc2599a21adab45383e8",
+      "teamId": "QGULMAPEB2",
+      "url": "https://downloads.izotope.com/product_download/iZotope_Nectar_Plus_v3_9_0.dmg",
+      "version": "3.9.0"
+    }
+  },
+  "neutron-3": {
+    "aarch64-darwin": {
+      "edition": "Neutron 3 Standard",
+      "kind": "dmg",
+      "member": "Install iZotope Neutron 3.app",
+      "sha256": "6f452779d3b9c57e3847abbc9ada0318679a34e56fdb3c971b64406b71dbbc68",
+      "teamId": "QGULMAPEB2",
+      "url": "https://downloads.izotope.com/product_download/iZotope_Neutron_v3_10_0.dmg",
+      "version": "3.10.0"
+    }
+  },
+  "ozone-9": {
+    "aarch64-darwin": {
+      "edition": "Ozone 9 Standard",
+      "kind": "dmg",
+      "member": "Install Ozone 9 Standard.app",
+      "sha256": "bb577775ead6c65b0560fe32852c4fb2651ddd5d3c8ef1be6fae985c27ea2bcc",
+      "teamId": "QGULMAPEB2",
+      "url": "https://downloads.izotope.com/product_download/iZotope_Ozone_Standard_v9_13_0.dmg",
+      "version": "9.13.0"
+    }
+  }
+}

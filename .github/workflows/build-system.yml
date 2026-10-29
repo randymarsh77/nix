@@ -34,6 +34,12 @@ jobs:
       - name: Switch
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
+          # Preserve runner-provided shell files before nix-darwin takes ownership.
+          for file in /etc/bashrc /etc/zshrc; do
+            if [ -e "$file" ]; then
+              sudo mv "$file" "$file.before-nix-darwin"
+            fi
+          done
           sudo ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
       - uses: actions/setup-node@v4
         if: inputs.publish

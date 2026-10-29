@@ -157,12 +157,16 @@
           modules = [
             base-intel
             ci-intel-packages
+            # Fresh CI installations use the current Nix installer group ID.
+            { ids.gids.nixbld = 350; }
           ];
         };
         ci-arm = darwin.lib.darwinSystem {
           modules = [
             base-arm
             ci-arm-packages
+            # Keep existing personal machines on their original group ID.
+            { ids.gids.nixbld = 350; }
           ];
         };
       };

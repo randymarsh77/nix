@@ -1,0 +1,60 @@
+name: Build Darwin Systems
+on:
+  workflow_call:
+    inputs:
+      publish:
+        type: boolean
+        default: false
+    secrets:
+      NIX_CACHE_SIGNING_KEY:
+        required: false
+
+jobs:
+  build:
+    name: ${{ matrix.flake }}
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ inputs.publish && 1 || 2 }}
+      matrix:
+        include:
+          - flake: ci-intel
+            runner: macos-15-intel
+          - flake: ci-arm
+            runner: macos-15
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/install-nix
+      - uses: randymarsh77/static-nix-cache/setup@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
+        if: inputs.publish
+      - name: Build
+        run: nix build --print-build-logs --max-silent-time 600 --timeout 1800 .#darwinConfigurations.${{ matrix.flake }}.system
+      - name: Switch
+        run: |
+          sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
+          # Preserve runner-provided shell files before nix-darwin takes ownership.
+          for file in /etc/bashrc /etc/zshrc; do
+            if [ -e "$file" ]; then
+              sudo mv "$file" "$file.before-nix-darwin"
+            fi
+          done
+          sudo ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
+      - uses: actions/setup-node@v4
+        if: inputs.publish
+        with:
+          node-version: 22
+      - name: Require cache signing key
+        if: inputs.publish
+        env:
+          SIGNING_KEY: ${{ secrets.NIX_CACHE_SIGNING_KEY }}
+        run: test -n "$SIGNING_KEY"
+      - name: Publish store paths
+        if: inputs.publish
+        uses: randymarsh77/static-nix-cache/deploy@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
+        with:
+          github-token: ${{ github.token }}
+          signing-key: ${{ secrets.NIX_CACHE_SIGNING_KEY }}
+          compression: xz
+          upstream-caches: https://cache.nixos.org

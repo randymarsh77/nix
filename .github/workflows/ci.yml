@@ -12,41 +12,51 @@ on:
       - '!.github/workflows/deps.yml'
       - '!.github/workflows/pr.yml'
 
+permissions:
+  contents: read
+
+# Shared with Build Flake: releases and the metadata index have one writer.
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('ci-pr-{0}', github.event.number) || 'nix-cache-publisher' }}
+  cancel-in-progress: false
+
 jobs:
-  ci:
-    name: CI
+  verify:
+    if: github.event_name == 'pull_request' || github.ref != 'refs/heads/master'
+    uses: ./.github/workflows/build-system.yml
+    permissions:
+      contents: read
+
+  publish:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    uses: ./.github/workflows/build-system.yml
+    permissions:
+      contents: write
+    with:
+      publish: true
+    secrets:
+      NIX_CACHE_SIGNING_KEY: ${{ secrets.NIX_CACHE_SIGNING_KEY }}
+
+  pages:
+    needs: publish
+    uses: ./.github/workflows/publish-cache.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+  status:
+    # Preserve the required check names configured in branch protection.
+    name: CI (${{ matrix.flake }})
+    if: always()
+    needs: [verify, publish]
+    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         flake: [ci-intel, ci-arm]
-        include:
-          - flake: ci-intel
-            runner: macos-13
-          - flake: ci-arm
-            runner: macos-14
-    runs-on: ${{ matrix.runner }}
-
     steps:
-      - name: Check out
-        uses: actions/checkout@v4
-
-      - name: Install Nix
-        uses: cachix/install-nix-action@v27
-        with:
-          extra_nix_config: |
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Cachix
-        uses: cachix/cachix-action@v15
-        with:
-          name: preucil
-          authToken: ${{ secrets.CACHIX_TOKEN }}
-
-      - name: Build
-        run: |
-          nix build .#darwinConfigurations.${{ matrix.flake }}.system
-
-      - name: Switch
-        run: |
-          curl --proto '=https' --tlsv1.2 -sSf -L https://github.com/NixOS/nix/raw/master/scripts/sequoia-nixbld-user-migration.sh | bash -
-          sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
-          ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
+      - name: Require successful builds
+        env:
+          BUILD_SUCCEEDED: ${{ needs.verify.result == 'success' || needs.publish.result == 'success' }}
+        run: test "$BUILD_SUCCEEDED" = true

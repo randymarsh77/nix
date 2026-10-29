@@ -4,31 +4,35 @@ on:
   repository_dispatch:
     types: [build-flake]
 
+permissions:
+  contents: read
+concurrency:
+  group: nix-cache-publisher
+  cancel-in-progress: false
+
 jobs:
   build-flake:
     name: Build Flake
+    permissions:
+      contents: write
     strategy:
+      fail-fast: false
+      max-parallel: 1
       matrix:
-        runner: [macos-13, macos-14]
+        runner: [macos-15-intel, macos-15]
         include:
-          - runner: macos-13
+          - runner: macos-15-intel
             arch: intel
-          - runner: macos-14
+          - runner: macos-15
             arch: arm
     runs-on: ${{ matrix.runner }}
 
     steps:
-      - name: Install Nix
-        uses: cachix/install-nix-action@v27
+      - uses: actions/checkout@v4
         with:
-          extra_nix_config: |
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Cachix
-        uses: cachix/cachix-action@v15
-        with:
-          name: preucil
-          authToken: ${{ secrets.CACHIX_TOKEN }}
+          persist-credentials: false
+      - uses: ./.github/actions/install-nix
+      - uses: randymarsh77/static-nix-cache/setup@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
 
       - name: Decode and create flake files
         env:
@@ -58,3 +62,26 @@ jobs:
       - name: Build flake
         run: |
           nix develop --command echo "Development shell built successfully"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Require cache signing key
+        env:
+          SIGNING_KEY: ${{ secrets.NIX_CACHE_SIGNING_KEY }}
+        run: test -n "$SIGNING_KEY"
+      - name: Publish store paths
+        uses: randymarsh77/static-nix-cache/deploy@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
+        with:
+          github-token: ${{ github.token }}
+          signing-key: ${{ secrets.NIX_CACHE_SIGNING_KEY }}
+          compression: xz
+          upstream-caches: https://cache.nixos.org
+
+  pages:
+    needs: build-flake
+    uses: ./.github/workflows/publish-cache.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

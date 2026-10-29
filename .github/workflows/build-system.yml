@@ -34,7 +34,7 @@ jobs:
       - name: Switch
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak
-          ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
+          sudo ./result/sw/bin/darwin-rebuild switch --flake .#${{ matrix.flake }}
       - uses: actions/setup-node@v4
         if: inputs.publish
         with:

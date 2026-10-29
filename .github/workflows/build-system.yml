@@ -30,7 +30,7 @@ jobs:
       - uses: randymarsh77/static-nix-cache/setup@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
         if: inputs.publish
       - name: Build
-        run: nix build .#darwinConfigurations.${{ matrix.flake }}.system
+        run: nix build --print-build-logs --max-silent-time 600 --timeout 1800 .#darwinConfigurations.${{ matrix.flake }}.system
       - name: Switch
         run: |
           sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.bak

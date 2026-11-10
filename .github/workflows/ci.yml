@@ -41,6 +41,7 @@ jobs:
     needs: publish
     uses: ./.github/workflows/publish-cache.yml
     permissions:
+      actions: read
       contents: read
       pages: write
       id-token: write

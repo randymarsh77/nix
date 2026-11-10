@@ -12,3 +12,10 @@ runs:
           access-tokens = github.com=${{ github.token }}
           extra-substituters = https://randymarsh77.github.io/nix
           extra-trusted-public-keys = ${{ steps.key.outputs.public-key }}
+    - name: Use modern Bash for subsequent actions
+      shell: bash
+      run: |
+        # macOS Bash 3.2 rejects empty arrays under `set -u` in cache deploy.
+        # Use Bash from the repository's locked nixpkgs on both architectures.
+        bash_path=$(nix build --no-link --print-out-paths --inputs-from . 'nixpkgs#bash^out')
+        echo "$bash_path/bin" >> "$GITHUB_PATH"

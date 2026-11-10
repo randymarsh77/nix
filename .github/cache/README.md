@@ -8,6 +8,10 @@ The ephemeral `GITHUB_TOKEN` authorizes Release uploads; no Cachix token is need
 The static-nix-cache actions and Pages generator are pinned to one commit.
 Update all pins together after testing a new cache implementation.
 
+The shared Nix installation action adds Bash from the locked nixpkgs to
+`GITHUB_PATH`. Cache deployment requires modern Bash: macOS's system Bash 3.2
+fails when the deploy action expands an empty array under `set -u`.
+
 Trusted master builds and repository-dispatch builds upload compressed NARs
 directly to GitHub Releases, without storing closures in Actions artifacts.
 Only dispatch flakes from trusted sources. Release shards start with `nix-cache`

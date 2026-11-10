@@ -60,7 +60,6 @@ let
     discard-permission-only-changes
     dl-gha-logs
     mitmproxy
-    packer
     ollama
 
     # Shell
@@ -68,9 +67,6 @@ let
     zsh-fzf-tab
 
     # Apps
-    # Note: If you change the list of GUI apps that you expect to see in Spotlight,
-    #       you'll need to run refresh-spotlight after applying the updated config.
-    refresh-spotlight
     vscode
     docker-desktop
     mysql-workbench-dist

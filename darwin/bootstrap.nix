@@ -23,6 +23,8 @@ let
     };
 in
 {
+  imports = [ ./applications.nix ];
+
   nix.settings = {
     substituters = [ "https://cache.nixos.org/" "https://randymarsh77.github.io/nix" ];
     trusted-public-keys = [

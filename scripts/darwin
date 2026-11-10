@@ -7,11 +7,11 @@ case "$action" in
   *) echo "Usage: $0 {build|apply}" >&2; exit 2 ;;
 esac
 if [ "${1:-}" = --help ]; then
-  echo "Usage: $action (automatically detects architecture and nixbld group ID)"
+  echo "Usage: $action (automatically detects architecture, user, and nixbld group ID)"
   exit 0
 fi
 if [ "$#" -ne 0 ]; then
-  echo "$action takes no arguments; architecture and group ID are detected automatically." >&2
+  echo "$action takes no arguments; architecture, user, and group ID are detected automatically." >&2
   exit 2
 fi
 if [ "$(uname -s)" != Darwin ]; then
@@ -47,17 +47,27 @@ case "$gid" in
   ''|*[!0-9]*) echo "Could not detect the nixbld group ID; check the Nix installation." >&2; exit 1 ;;
 esac
 
-echo "Building configuration $config for nixbld group $gid..." >&2
+# Dotfiles and apps are installed for whoever runs this, even through sudo.
+user=$(id -un)
+if [ "$user" = root ]; then
+  user=${SUDO_USER:-}
+fi
+case "$user" in
+  ''|root) echo "Could not detect the user to configure; run this as yourself, not root." >&2; exit 1 ;;
+esac
+
+echo "Building configuration $config for user $user and nixbld group $gid..." >&2
 system=$(nix --extra-experimental-features 'nix-command flakes' build \
   --impure --print-out-paths --out-link "$repo/result" \
   --file "$repo/scripts/local-system.nix" \
-  --argstr repo "$repo" --argstr config "$config" --arg nixbldGid "$gid")
+  --argstr repo "$repo" --argstr config "$config" --arg nixbldGid "$gid" \
+  --argstr primaryUser "$user")
 
 if [ "$action" = apply ]; then
   # Match darwin-rebuild switch: record a generation, then activate it.
   # Activate the exact system built with the detected GID, without re-evaluation.
-  sudo "$system/sw/bin/nix-env" -p /nix/var/nix/profiles/system --set "$system"
-  sudo "$system/sw/bin/darwin-rebuild" activate
+  sudo -H "$system/sw/bin/nix-env" -p /nix/var/nix/profiles/system --set "$system"
+  sudo -H "$system/sw/bin/darwin-rebuild" activate
 else
   echo "Built $system (linked at $repo/result)"
 fi

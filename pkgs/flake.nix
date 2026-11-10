@@ -10,7 +10,6 @@
       overlays.default = final: prev: {
         sourcetree = final.callPackage ./sourcetree { };
         direnv-exec = final.callPackage ./direnv-exec { };
-        refresh-spotlight = final.callPackage ./refresh-spotlight { };
         remote-build-flake = final.callPackage ./remote-build-flake { };
         xcode = final.callPackage ./xcode { };
         dotnet = final.callPackage ./dotnet { };
@@ -41,7 +40,6 @@
         packages = {
           sourcetree = pkgs.sourcetree;
           direnv-exec = pkgs.direnv-exec;
-          refresh-spotlight = pkgs.refresh-spotlight;
           remote-build-flake = pkgs.remote-build-flake;
           xcode = pkgs.xcode;
           dotnet = pkgs.dotnet;

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+TARGET_USER=@primaryUser@
+
+# Activation runs as root, so write dotfiles as the target user: they must stay
+# user-owned and editable rather than root-owned copies of read-only store files.
+copy-as-user() {
+  install -o "$TARGET_USER" -m 0644 "$1" "$2";
+}
+
 install-dot-file() {
   local SOURCE="$1";
   local DESTINATION="$2";
@@ -10,15 +18,18 @@ install-dot-file() {
       echo "❗The contents of $DESTINATION would be overwritten.";
       echo "  👉 Backing up $DESTINATION => $BACKUP)";
       echo "  👉 You should review the file differences and consider upstreaming any local changes."
-      cp "$DESTINATION" "$BACKUP";
-      cp "$SOURCE" "$DESTINATION";
+      copy-as-user "$DESTINATION" "$BACKUP";
+      copy-as-user "$SOURCE" "$DESTINATION";
       echo "✅ Updated $DESTINATION";
     else
+      # Repair files left root-owned and read-only by earlier activations.
+      chown "$TARGET_USER" "$DESTINATION";
+      chmod u+w "$DESTINATION";
       echo "✅ $DESTINATION matches the configuration.";
     fi
   else
-    mkdir -p "$(dirname "$DESTINATION")";
-    cp "$SOURCE" "$DESTINATION";
+    sudo -u "$TARGET_USER" mkdir -p "$(dirname "$DESTINATION")";
+    copy-as-user "$SOURCE" "$DESTINATION";
     echo "✅ Created $DESTINATION";
   fi
 }
@@ -31,7 +42,6 @@ install-dot-file @p10k@ @home@/.p10k.zsh
 echo "Copying dotfiles..."
 @createAllDotFiles@
 
-TARGET_USER=@primaryUser@
 echo "Configuring VSCode user settings for '$TARGET_USER'..."
 VSCODE_USER_SETTINGS_DIR=$(dirname @home@/Library/Application\ Support/Code/User/settings.json)
 mkdir -p "$VSCODE_USER_SETTINGS_DIR"

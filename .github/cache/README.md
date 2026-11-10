@@ -12,6 +12,12 @@ The shared Nix installation action adds Bash from the locked nixpkgs to
 `GITHUB_PATH`. Cache deployment requires modern Bash: macOS's system Bash 3.2
 fails when the deploy action expands an empty array under `set -u`.
 
+Deploy steps limit Nix to one HTTP connection and allow 300 seconds for a
+response. The release backend paces metadata reads at four-second intervals;
+Nix's default 25 concurrent requests can otherwise queue longer than its
+15-second timeout. The longer timeout also covers the initial release index
+scan. These settings apply only to publishing, not normal builds or clients.
+
 Trusted master builds and repository-dispatch builds upload compressed NARs
 directly to GitHub Releases, without storing closures in Actions artifacts.
 Only dispatch flakes from trusted sources. Release shards start with `nix-cache`

@@ -72,6 +72,11 @@ jobs:
         run: test -n "$SIGNING_KEY"
       - name: Publish store paths
         uses: randymarsh77/static-nix-cache/deploy@adf33d4e6ce37d8e2dac9e737a9fbaca08586b78
+        env:
+          # Match the release backend's serialized API reads and index startup.
+          NIX_CONFIG: |
+            http-connections = 1
+            connect-timeout = 300
         with:
           github-token: ${{ github.token }}
           signing-key: ${{ secrets.NIX_CACHE_SIGNING_KEY }}

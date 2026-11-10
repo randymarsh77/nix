@@ -1,0 +1,63 @@
+#!/bin/bash
+set -euo pipefail
+
+action=${1:-}
+case "$action" in
+  build|apply) shift ;;
+  *) echo "Usage: $0 {build|apply}" >&2; exit 2 ;;
+esac
+if [ "${1:-}" = --help ]; then
+  echo "Usage: $action (automatically detects architecture and nixbld group ID)"
+  exit 0
+fi
+if [ "$#" -ne 0 ]; then
+  echo "$action takes no arguments; architecture and group ID are detected automatically." >&2
+  exit 2
+fi
+if [ "$(uname -s)" != Darwin ]; then
+  echo "These helpers require macOS." >&2
+  exit 1
+fi
+
+repo=$(cd "$(dirname "$0")/.." && pwd)
+if ! command -v nix >/dev/null 2>&1; then
+  # Also work immediately after installation, before opening a new shell.
+  export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+fi
+if ! command -v nix >/dev/null 2>&1; then
+  echo "Install Nix first: $repo/scripts/install-nix" >&2
+  exit 1
+fi
+
+case "$(uname -m)" in
+  arm64|aarch64) config=y ;;
+  x86_64)
+    # A Terminal running under Rosetta still belongs to an Apple Silicon Mac.
+    if [ "$(sysctl -n hw.optional.arm64 2>/dev/null || true)" = 1 ]; then
+      config=y
+    else
+      config=x
+    fi
+    ;;
+  *) echo "Unsupported Mac architecture: $(uname -m)" >&2; exit 1 ;;
+esac
+
+gid=$(dscl . -read /Groups/nixbld PrimaryGroupID | awk '$1 == "PrimaryGroupID:" { print $2 }')
+case "$gid" in
+  ''|*[!0-9]*) echo "Could not detect the nixbld group ID; check the Nix installation." >&2; exit 1 ;;
+esac
+
+echo "Building configuration $config for nixbld group $gid..." >&2
+system=$(nix --extra-experimental-features 'nix-command flakes' build \
+  --impure --print-out-paths --out-link "$repo/result" \
+  --file "$repo/scripts/local-system.nix" \
+  --argstr repo "$repo" --argstr config "$config" --arg nixbldGid "$gid")
+
+if [ "$action" = apply ]; then
+  # Match darwin-rebuild switch: record a generation, then activate it.
+  # Activate the exact system built with the detected GID, without re-evaluation.
+  sudo "$system/sw/bin/nix-env" -p /nix/var/nix/profiles/system --set "$system"
+  sudo "$system/sw/bin/darwin-rebuild" activate
+else
+  echo "Built $system (linked at $repo/result)"
+fi

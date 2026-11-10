@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+if [ "$(uname -s)" != Darwin ]; then
+  echo "This installer helper is for macOS." >&2
+  exit 1
+fi
+if command -v nix >/dev/null 2>&1 || [ -x /nix/var/nix/profiles/default/bin/nix ]; then
+  echo "Nix is already installed. Run scripts/build or scripts/apply."
+  exit 0
+fi
+installer=$(mktemp -t nix-installer)
+trap 'rm -f "$installer"' EXIT
+curl --fail --location --proto '=https' --tlsv1.2 https://nixos.org/nix/install -o "$installer"
+sh "$installer" --daemon
+echo "Nix installed. Run scripts/build or scripts/apply."

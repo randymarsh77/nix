@@ -105,18 +105,30 @@
               withShell,
               withDotFiles,
             }:
-            { pkgs, ... }:
+            { pkgs, config, ... }:
+            let
+              # The local build scripts set system.primaryUser to whoever runs them.
+              user = if config.system.primaryUser != null then config.system.primaryUser else primaryUser;
+              isDefaultUser = user == primaryUser;
+              userVSCodeSettings = ./config/vscode/${user}/settings.json;
+            in
             {
               system.activationScripts.postActivation.text = myLib.configure-environment {
                 inherit
-                  primaryUser
-                  home
                   pkgs
                   lib
-                  withVSCodeSettings
                   withShell
                   withDotFiles
                   ;
+                primaryUser = user;
+                home = if isDefaultUser then home else "/Users/${user}";
+                withVSCodeSettings =
+                  if isDefaultUser then
+                    withVSCodeSettings
+                  else if builtins.pathExists userVSCodeSettings then
+                    lib.fileContents userVSCodeSettings
+                  else
+                    "{}";
               };
             }
           )

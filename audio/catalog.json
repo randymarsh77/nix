@@ -1,0 +1,3605 @@
+{
+  "schemaVersion": 2,
+  "observedDate": "2026-10-27",
+  "daw": {
+    "name": "Ableton Live Suite",
+    "observedVersions": [
+      "10.1.43",
+      "11.3.20"
+    ],
+    "sampleLibraries": "Managed by Ableton; outside this flake."
+  },
+  "managers": [
+    {
+      "name": "Native Access",
+      "observedVersion": "3.4.0",
+      "page": "https://www.native-instruments.com/pages/downloads",
+      "path": "/Applications/Native Access.app"
+    },
+    {
+      "name": "iZotope Product Portal",
+      "observedVersion": "1.4.2",
+      "page": "https://www.izotope.com/pages/download-product-portal",
+      "path": "/Applications/iZotope Product Portal.app"
+    },
+    {
+      "name": "iLok License Manager",
+      "observedVersion": "5.4.1 GM (b3455, 933b85fce7)",
+      "page": "https://www.ilok.com/#!license-manager",
+      "path": "/Applications/iLok License Manager.app"
+    },
+    {
+      "name": "Splice",
+      "observedVersion": "5.2.2",
+      "page": "https://splice.com/download",
+      "path": "/Applications/Splice.app"
+    }
+  ],
+  "products": [
+    {
+      "id": "absynth-5",
+      "name": "Absynth 5",
+      "vendor": "Native Instruments",
+      "version": "5.3.1 (R1628)",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Absynth 5.aaxplugin",
+          "id": "Absynth 5.aaxplugin",
+          "version": "5.3.1 (R1628)",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Absynth 5.aaxplugin",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Absynth 5.component",
+          "id": "Absynth 5.MusicDevice.component",
+          "version": "5.3.1 (R1628)",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Absynth 5.component",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Absynth 5 FX Surround.vst",
+          "id": "Absynth 5.FX2x6.vst",
+          "version": "5.3.1 (R1628)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Absynth 5 FX Surround.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Absynth 5 FX.vst",
+          "id": "Absynth 5.FX.vst",
+          "version": "5.3.1 (R1628)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Absynth 5 FX.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Absynth 5 Stereo.vst",
+          "id": "Absynth 5.Synth2.vst",
+          "version": "5.3.1 (R1628)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Absynth 5 Stereo.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Absynth 5.vst",
+          "id": "Absynth 5.Synth.vst",
+          "version": "5.3.1 (R1628)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Absynth 5.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "5.3.1 (R1628)",
+          "bundles": [
+            {
+              "name": "Absynth 5.aaxplugin",
+              "id": "Absynth 5.aaxplugin",
+              "version": "5.3.1 (R1628)",
+              "format": "AAX"
+            },
+            {
+              "name": "Absynth 5.component",
+              "id": "Absynth 5.MusicDevice.component",
+              "version": "5.3.1 (R1628)",
+              "format": "AU"
+            },
+            {
+              "name": "Absynth 5 FX Surround.vst",
+              "id": "Absynth 5.FX2x6.vst",
+              "version": "5.3.1 (R1628)",
+              "format": "VST2"
+            },
+            {
+              "name": "Absynth 5 FX.vst",
+              "id": "Absynth 5.FX.vst",
+              "version": "5.3.1 (R1628)",
+              "format": "VST2"
+            },
+            {
+              "name": "Absynth 5 Stereo.vst",
+              "id": "Absynth 5.Synth2.vst",
+              "version": "5.3.1 (R1628)",
+              "format": "VST2"
+            },
+            {
+              "name": "Absynth 5.vst",
+              "id": "Absynth 5.Synth.vst",
+              "version": "5.3.1 (R1628)",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "5.3.1 (R1628)",
+          "bundles": [],
+          "reason": "Absynth 5 has no verified native build; a newer major product is a separate license/project migration."
+        }
+      }
+    },
+    {
+      "id": "archetype-gojira",
+      "name": "Archetype Gojira",
+      "vendor": "Neural DSP",
+      "version": "1.0.0",
+      "source": {
+        "page": "https://neuraldsp.com/downloads",
+        "instructions": "Select the original product and exact version under Past Releases, not its newer X replacement."
+      },
+      "license": "Activate the product using iLok License Manager; valid activation locations depend on the license.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Archetype Gojira.aaxplugin",
+          "id": "com.NeuralDSP.ArchetypeGojira",
+          "version": "1.0.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Archetype Gojira.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Archetype Gojira.component",
+          "id": "com.NeuralDSP.ArchetypeGojira",
+          "version": "1.0.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Archetype Gojira.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Archetype Gojira.vst",
+          "id": "com.NeuralDSP.ArchetypeGojira",
+          "version": "1.0.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Archetype Gojira.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Archetype Gojira.vst3",
+          "id": "com.NeuralDSP.ArchetypeGojira",
+          "version": "1.0.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Archetype Gojira.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.0.0",
+          "bundles": [
+            {
+              "name": "Archetype Gojira.aaxplugin",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.0",
+              "format": "AAX"
+            },
+            {
+              "name": "Archetype Gojira.component",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.0",
+              "format": "AU"
+            },
+            {
+              "name": "Archetype Gojira.vst",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Archetype Gojira.vst3",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "1.0.1",
+          "bundles": [
+            {
+              "name": "Archetype Gojira.aaxplugin",
+              "format": "AAX",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Archetype Gojira.component",
+              "format": "AU",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Archetype Gojira.vst",
+              "format": "VST2",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Archetype Gojira.vst3",
+              "format": "VST3",
+              "id": "com.NeuralDSP.ArchetypeGojira",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            }
+          ],
+          "reason": "Official original-product universal update; arm64 slices verified in the installer payload. This updates the version on Apple Silicon without switching to the X edition."
+        }
+      }
+    },
+    {
+      "id": "archetype-tim-henson",
+      "name": "Archetype Tim Henson",
+      "vendor": "Neural DSP",
+      "version": "1.0.0",
+      "source": {
+        "page": "https://neuraldsp.com/downloads",
+        "instructions": "Select the original product and exact version under Past Releases, not its newer X replacement."
+      },
+      "license": "Activate the product using iLok License Manager; valid activation locations depend on the license.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Archetype Tim Henson.aaxplugin",
+          "id": "com.NeuralDSP.ArchetypeTimHenson",
+          "version": "1.0.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Archetype Tim Henson.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Archetype Tim Henson.component",
+          "id": "com.NeuralDSP.ArchetypeTimHenson",
+          "version": "1.0.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Archetype Tim Henson.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Archetype Tim Henson.vst",
+          "id": "com.NeuralDSP.ArchetypeTimHenson",
+          "version": "1.0.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Archetype Tim Henson.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Archetype Tim Henson.vst3",
+          "id": "com.NeuralDSP.ArchetypeTimHenson",
+          "version": "1.0.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Archetype Tim Henson.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.0.0",
+          "bundles": [
+            {
+              "name": "Archetype Tim Henson.aaxplugin",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.0",
+              "format": "AAX"
+            },
+            {
+              "name": "Archetype Tim Henson.component",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.0",
+              "format": "AU"
+            },
+            {
+              "name": "Archetype Tim Henson.vst",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Archetype Tim Henson.vst3",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "1.0.1",
+          "bundles": [
+            {
+              "name": "Archetype Tim Henson.aaxplugin",
+              "format": "AAX",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Archetype Tim Henson.component",
+              "format": "AU",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Archetype Tim Henson.vst",
+              "format": "VST2",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Archetype Tim Henson.vst3",
+              "format": "VST3",
+              "id": "com.NeuralDSP.ArchetypeTimHenson",
+              "version": "1.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            }
+          ],
+          "reason": "Official original-product universal update; arm64 slices verified in the installer payload. This updates the version on Apple Silicon without switching to the X edition."
+        }
+      }
+    },
+    {
+      "id": "auv3-filter-sample",
+      "name": "AUv3Filter sample",
+      "vendor": "Apple sample code",
+      "version": "1.0",
+      "source": {
+        "page": "https://developer.apple.com/documentation/audiotoolbox/creating-custom-audio-effects",
+        "instructions": "This is an installed AUv3Filter development sample, not a commercial plugin. Rebuild the original app from its source/project and signing identity."
+      },
+      "license": "No commercial license inferred; app signing/provisioning may be required.",
+      "architecturesObserved": [],
+      "bundles": [
+        {
+          "name": "AUv3FilterExtension.appex",
+          "id": "com.example.apple-samplecode.AUv3Filter5UFQ47TZPL.AUv3FilterExtension",
+          "version": "1.0",
+          "format": "AUv3",
+          "observedPath": "/Applications/AUv3Filter.app/Contents/PlugIns/AUv3FilterExtension.appex",
+          "architecturesObserved": []
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": null,
+          "version": "1.0",
+          "bundles": [
+            {
+              "name": "AUv3FilterExtension.appex",
+              "id": "com.example.apple-samplecode.AUv3Filter5UFQ47TZPL.AUv3FilterExtension",
+              "version": "1.0",
+              "format": "AUv3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "1.0",
+          "bundles": [],
+          "reason": "Rebuild the development sample for this architecture from its original source and signing identity."
+        }
+      }
+    },
+    {
+      "id": "captain-plugins-5",
+      "name": "Captain Plugins 5",
+      "vendor": "Mixed In Key",
+      "version": "5.1.3",
+      "source": {
+        "page": "https://mixedinkey.com/faq/captain-plugins/",
+        "instructions": "Recover your original Captain Plugins 5 download through Mixed In Key. Keep personalized download links and VIP codes out of Git."
+      },
+      "license": "Activate with your own Mixed In Key account/VIP code in the vendor UI.",
+      "architecturesObserved": [
+        "arm64",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Captain Beat.aaxplugin",
+          "id": "com.mixedinkey.aax.Odesi.Drums",
+          "version": "5.1.3",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Captain Beat.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Chords.aaxplugin",
+          "id": "com.mixedinkey.aax.Odesi.Chords",
+          "version": "5.1.3",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Captain Chords.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Deep.aaxplugin",
+          "id": "com.mixedinkey.aax.Odesi.Bass",
+          "version": "5.1.3",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Captain Deep.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Melody.aaxplugin",
+          "id": "com.mixedinkey.aax.Odesi.Melody",
+          "version": "5.1.3",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Captain Melody.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Play.aaxplugin",
+          "id": "com.mixedinkey.aax.Odesi.Play",
+          "version": "5.1.3",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Captain Play.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Beat Audio.component",
+          "id": "com.mixedinkey.au.audio.Odesi.Drums",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Beat Audio.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Chords Audio.component",
+          "id": "com.mixedinkey.au.audio.Odesi.Chords",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Chords Audio.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Chords MIDI.component",
+          "id": "com.mixedinkey.au.midi.Odesi.Chords",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Chords MIDI.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Deep Audio.component",
+          "id": "com.mixedinkey.au.audio.Odesi.Bass",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Deep Audio.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Deep MIDI.component",
+          "id": "com.mixedinkey.au.midi.Odesi.Bass",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Deep MIDI.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Melody Audio.component",
+          "id": "com.mixedinkey.au.audio.Odesi.Melody",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Melody Audio.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Melody MIDI.component",
+          "id": "com.mixedinkey.au.midi.Odesi.Melody",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Melody MIDI.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Play Audio.component",
+          "id": "com.mixedinkey.au.audio.Odesi.Play",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Play Audio.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Play MIDI.component",
+          "id": "com.mixedinkey.au.midi.Odesi.Play",
+          "version": "5.1.3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Captain Play MIDI.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Captain Beat.vst",
+          "id": "com.mixedinkey.vst.Odesi.Drums",
+          "version": "5.1.3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Captain Beat.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Chords.vst",
+          "id": "com.mixedinkey.vst.Odesi.Chords",
+          "version": "5.1.3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Captain Chords.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Deep.vst",
+          "id": "com.mixedinkey.vst.Odesi.Bass",
+          "version": "5.1.3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Captain Deep.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Melody.vst",
+          "id": "com.mixedinkey.vst.Odesi.Melody",
+          "version": "5.1.3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Captain Melody.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Captain Play.vst",
+          "id": "com.mixedinkey.vst.Odesi.Play",
+          "version": "5.1.3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Captain Play.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "5.1.3",
+          "bundles": [
+            {
+              "name": "Captain Beat.aaxplugin",
+              "id": "com.mixedinkey.aax.Odesi.Drums",
+              "version": "5.1.3",
+              "format": "AAX"
+            },
+            {
+              "name": "Captain Chords.aaxplugin",
+              "id": "com.mixedinkey.aax.Odesi.Chords",
+              "version": "5.1.3",
+              "format": "AAX"
+            },
+            {
+              "name": "Captain Deep.aaxplugin",
+              "id": "com.mixedinkey.aax.Odesi.Bass",
+              "version": "5.1.3",
+              "format": "AAX"
+            },
+            {
+              "name": "Captain Melody.aaxplugin",
+              "id": "com.mixedinkey.aax.Odesi.Melody",
+              "version": "5.1.3",
+              "format": "AAX"
+            },
+            {
+              "name": "Captain Play.aaxplugin",
+              "id": "com.mixedinkey.aax.Odesi.Play",
+              "version": "5.1.3",
+              "format": "AAX"
+            },
+            {
+              "name": "Captain Beat Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Drums",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Chords Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Chords",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Chords MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Chords",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Deep Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Bass",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Deep MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Bass",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Melody Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Melody",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Melody MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Melody",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Play Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Play",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Play MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Play",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Beat.vst",
+              "id": "com.mixedinkey.vst.Odesi.Drums",
+              "version": "5.1.3",
+              "format": "VST2"
+            },
+            {
+              "name": "Captain Chords.vst",
+              "id": "com.mixedinkey.vst.Odesi.Chords",
+              "version": "5.1.3",
+              "format": "VST2"
+            },
+            {
+              "name": "Captain Deep.vst",
+              "id": "com.mixedinkey.vst.Odesi.Bass",
+              "version": "5.1.3",
+              "format": "VST2"
+            },
+            {
+              "name": "Captain Melody.vst",
+              "id": "com.mixedinkey.vst.Odesi.Melody",
+              "version": "5.1.3",
+              "format": "VST2"
+            },
+            {
+              "name": "Captain Play.vst",
+              "id": "com.mixedinkey.vst.Odesi.Play",
+              "version": "5.1.3",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "5.1.3",
+          "bundles": [
+            {
+              "name": "Captain Chords Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Chords",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Chords MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Chords",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Deep Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Bass",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Deep MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Bass",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Melody Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Melody",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Melody MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Melody",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Play Audio.component",
+              "id": "com.mixedinkey.au.audio.Odesi.Play",
+              "version": "5.1.3",
+              "format": "AU"
+            },
+            {
+              "name": "Captain Play MIDI.component",
+              "id": "com.mixedinkey.au.midi.Odesi.Play",
+              "version": "5.1.3",
+              "format": "AU"
+            }
+          ],
+          "reason": "Selects the verified native formats from the observed universal binaries; other baseline formats remain in the inventory. Captain Beat has no verified native bundle in this baseline."
+        }
+      }
+    },
+    {
+      "id": "darkglass-ultra",
+      "name": "Darkglass Ultra",
+      "vendor": "Neural DSP",
+      "version": "3.0.0",
+      "source": {
+        "page": "https://neuraldsp.com/downloads",
+        "instructions": "Select the original product and exact version under Past Releases, not its newer X replacement."
+      },
+      "license": "Activate the product using iLok License Manager; valid activation locations depend on the license.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Darkglass Ultra.aaxplugin",
+          "id": "com.NeuralDSP.DarkglassUltra",
+          "version": "3.0.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Darkglass Ultra.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Darkglass Ultra.component",
+          "id": "com.NeuralDSP.DarkglassUltra",
+          "version": "3.0.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Darkglass Ultra.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Darkglass Ultra.vst",
+          "id": "com.NeuralDSP.DarkglassUltra",
+          "version": "3.0.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Darkglass Ultra.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Darkglass Ultra.vst3",
+          "id": "com.NeuralDSP.DarkglassUltra",
+          "version": "3.0.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Darkglass Ultra.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "3.0.0",
+          "bundles": [
+            {
+              "name": "Darkglass Ultra.aaxplugin",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.0",
+              "format": "AAX"
+            },
+            {
+              "name": "Darkglass Ultra.component",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.0",
+              "format": "AU"
+            },
+            {
+              "name": "Darkglass Ultra.vst",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Darkglass Ultra.vst3",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "3.0.1",
+          "bundles": [
+            {
+              "name": "Darkglass Ultra.aaxplugin",
+              "format": "AAX",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Darkglass Ultra.component",
+              "format": "AU",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Darkglass Ultra.vst",
+              "format": "VST2",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Darkglass Ultra.vst3",
+              "format": "VST3",
+              "id": "com.NeuralDSP.DarkglassUltra",
+              "version": "3.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            }
+          ],
+          "reason": "Official original-product universal update; arm64 slices verified in the installer payload. This updates the version on Apple Silicon without switching to the X edition."
+        }
+      }
+    },
+    {
+      "id": "fm8",
+      "name": "FM8",
+      "vendor": "Native Instruments",
+      "version": "1.4.6+3",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "arm64",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "FM8.aaxplugin",
+          "id": "FM8.aaxplugin",
+          "version": "1.4.6+3",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/FM8.aaxplugin",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "FM8.component",
+          "id": "FM8.MusicDevice.component",
+          "version": "1.4.6+3",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/FM8.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "FM8 FX.vst",
+          "id": "FM8.FX.vst",
+          "version": "1.4.6+3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/FM8 FX.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "FM8.vst",
+          "id": "FM8.Synth.vst",
+          "version": "1.4.6+3",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/FM8.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "FM8.vst3",
+          "id": "FM8.vst3",
+          "version": "1.4.6+3",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/FM8.vst3",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.4.6+3",
+          "bundles": [
+            {
+              "name": "FM8.aaxplugin",
+              "id": "FM8.aaxplugin",
+              "version": "1.4.6+3",
+              "format": "AAX"
+            },
+            {
+              "name": "FM8.component",
+              "id": "FM8.MusicDevice.component",
+              "version": "1.4.6+3",
+              "format": "AU"
+            },
+            {
+              "name": "FM8 FX.vst",
+              "id": "FM8.FX.vst",
+              "version": "1.4.6+3",
+              "format": "VST2"
+            },
+            {
+              "name": "FM8.vst",
+              "id": "FM8.Synth.vst",
+              "version": "1.4.6+3",
+              "format": "VST2"
+            },
+            {
+              "name": "FM8.vst3",
+              "id": "FM8.vst3",
+              "version": "1.4.6+3",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "1.4.6+3",
+          "bundles": [
+            {
+              "name": "FM8.aaxplugin",
+              "id": "FM8.aaxplugin",
+              "version": "1.4.6+3",
+              "format": "AAX"
+            },
+            {
+              "name": "FM8.component",
+              "id": "FM8.MusicDevice.component",
+              "version": "1.4.6+3",
+              "format": "AU"
+            },
+            {
+              "name": "FM8.vst3",
+              "id": "FM8.vst3",
+              "version": "1.4.6+3",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Selects the verified native formats from the observed universal binaries; other baseline formats remain in the inventory."
+        }
+      }
+    },
+    {
+      "id": "fortin-cali-suite",
+      "name": "Fortin Cali Suite",
+      "vendor": "Neural DSP",
+      "version": "1.0.0",
+      "source": {
+        "page": "https://neuraldsp.com/downloads",
+        "instructions": "Select the original product and exact version under Past Releases, not its newer X replacement."
+      },
+      "license": "Activate the product using iLok License Manager; valid activation locations depend on the license.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Fortin Cali Suite.aaxplugin",
+          "id": "com.NeuralDSP.FortinCaliSuite",
+          "version": "1.0.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Fortin Cali Suite.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Fortin Cali Suite.component",
+          "id": "com.NeuralDSP.FortinCaliSuite",
+          "version": "1.0.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Fortin Cali Suite.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Fortin Cali Suite.vst",
+          "id": "com.NeuralDSP.FortinCaliSuite",
+          "version": "1.0.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Fortin Cali Suite.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Fortin Cali Suite.vst3",
+          "id": "com.NeuralDSP.FortinCaliSuite",
+          "version": "1.0.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Fortin Cali Suite.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.0.0",
+          "bundles": [
+            {
+              "name": "Fortin Cali Suite.aaxplugin",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "1.0.0",
+              "format": "AAX"
+            },
+            {
+              "name": "Fortin Cali Suite.component",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "1.0.0",
+              "format": "AU"
+            },
+            {
+              "name": "Fortin Cali Suite.vst",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "1.0.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Fortin Cali Suite.vst3",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "1.0.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "2.0.1",
+          "bundles": [
+            {
+              "name": "Fortin Cali Suite.aaxplugin",
+              "format": "AAX",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "2.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Fortin Cali Suite.component",
+              "format": "AU",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "2.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Fortin Cali Suite.vst",
+              "format": "VST2",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "2.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Fortin Cali Suite.vst3",
+              "format": "VST3",
+              "id": "com.NeuralDSP.FortinCaliSuite",
+              "version": "2.0.1",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            }
+          ],
+          "reason": "Official original-product universal update; arm64 slices verified in the installer payload. This updates the version on Apple Silicon without switching to the X edition."
+        }
+      }
+    },
+    {
+      "id": "fortin-nameless-suite",
+      "name": "Fortin Nameless Suite",
+      "vendor": "Neural DSP",
+      "version": "3.0.1",
+      "source": {
+        "page": "https://neuraldsp.com/downloads",
+        "instructions": "Select the original product and exact version under Past Releases, not its newer X replacement."
+      },
+      "license": "Activate the product using iLok License Manager; valid activation locations depend on the license.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Fortin Nameless Suite.aaxplugin",
+          "id": "com.neuraldsp.FortinNamelessSuite",
+          "version": "3.0.1",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Fortin Nameless Suite.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Fortin Nameless Suite.component",
+          "id": "com.neuraldsp.FortinNamelessSuite",
+          "version": "3.0.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Fortin Nameless Suite.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Fortin Nameless Suite.vst",
+          "id": "com.neuraldsp.FortinNamelessSuite",
+          "version": "3.0.1",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Fortin Nameless Suite.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Fortin Nameless Suite.vst3",
+          "id": "com.neuraldsp.FortinNamelessSuite",
+          "version": "3.0.1",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Fortin Nameless Suite.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "3.0.1",
+          "bundles": [
+            {
+              "name": "Fortin Nameless Suite.aaxplugin",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.1",
+              "format": "AAX"
+            },
+            {
+              "name": "Fortin Nameless Suite.component",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.1",
+              "format": "AU"
+            },
+            {
+              "name": "Fortin Nameless Suite.vst",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.1",
+              "format": "VST2"
+            },
+            {
+              "name": "Fortin Nameless Suite.vst3",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.1",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "3.0.2",
+          "bundles": [
+            {
+              "name": "Fortin Nameless Suite.aaxplugin",
+              "format": "AAX",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.2",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Fortin Nameless Suite.component",
+              "format": "AU",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.2",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Fortin Nameless Suite.vst",
+              "format": "VST2",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.2",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            },
+            {
+              "name": "Fortin Nameless Suite.vst3",
+              "format": "VST3",
+              "id": "com.neuraldsp.FortinNamelessSuite",
+              "version": "3.0.2",
+              "architectures": [
+                "x86_64",
+                "arm64"
+              ]
+            }
+          ],
+          "reason": "Official original-product universal update; arm64 slices verified in the installer payload. This updates the version on Apple Silicon without switching to the X edition."
+        }
+      }
+    },
+    {
+      "id": "guitar-rig-5",
+      "name": "Guitar Rig 5",
+      "vendor": "Native Instruments",
+      "version": "5.2.2 (R8)",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Guitar Rig 5.aaxplugin",
+          "id": "Guitar Rig 5.aaxplugin",
+          "version": "5.2.2 (R8)",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Guitar Rig 5.aaxplugin",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Guitar Rig 5.component",
+          "id": "Guitar Rig 5.MusicDevice.component",
+          "version": "5.2.2 (R8)",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Guitar Rig 5.component",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Guitar Rig 5.vst",
+          "id": "Guitar Rig 5.FX.vst",
+          "version": "5.2.2 (R8)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Guitar Rig 5.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "5.2.2 (R8)",
+          "bundles": [
+            {
+              "name": "Guitar Rig 5.aaxplugin",
+              "id": "Guitar Rig 5.aaxplugin",
+              "version": "5.2.2 (R8)",
+              "format": "AAX"
+            },
+            {
+              "name": "Guitar Rig 5.component",
+              "id": "Guitar Rig 5.MusicDevice.component",
+              "version": "5.2.2 (R8)",
+              "format": "AU"
+            },
+            {
+              "name": "Guitar Rig 5.vst",
+              "id": "Guitar Rig 5.FX.vst",
+              "version": "5.2.2 (R8)",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "5.2.2 (R8)",
+          "bundles": [],
+          "reason": "Guitar Rig 5 is legacy Intel software; newer Guitar Rig generations are separate products."
+        }
+      }
+    },
+    {
+      "id": "kontakt-5",
+      "name": "Kontakt 5",
+      "vendor": "Native Instruments",
+      "version": "5.8.1 (R43)",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Kontakt 5.aaxplugin",
+          "id": "Kontakt 5.aaxplugin",
+          "version": "5.8.1 (R43)",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Kontakt 5.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt 5.component",
+          "id": "Kontakt 5.MusicDevice.component",
+          "version": "5.8.1 (R43)",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Kontakt 5.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt 5 16out.vst",
+          "id": "Kontakt 5.Synth16.vst",
+          "version": "5.8.1 (R43)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Kontakt 5 16out.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt 5 8out.vst",
+          "id": "Kontakt 5.Synth8.vst",
+          "version": "5.8.1 (R43)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Kontakt 5 8out.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt 5.vst",
+          "id": "Kontakt 5.Synth.vst",
+          "version": "5.8.1 (R43)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Kontakt 5.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "5.8.1 (R43)",
+          "bundles": [
+            {
+              "name": "Kontakt 5.aaxplugin",
+              "id": "Kontakt 5.aaxplugin",
+              "version": "5.8.1 (R43)",
+              "format": "AAX"
+            },
+            {
+              "name": "Kontakt 5.component",
+              "id": "Kontakt 5.MusicDevice.component",
+              "version": "5.8.1 (R43)",
+              "format": "AU"
+            },
+            {
+              "name": "Kontakt 5 16out.vst",
+              "id": "Kontakt 5.Synth16.vst",
+              "version": "5.8.1 (R43)",
+              "format": "VST2"
+            },
+            {
+              "name": "Kontakt 5 8out.vst",
+              "id": "Kontakt 5.Synth8.vst",
+              "version": "5.8.1 (R43)",
+              "format": "VST2"
+            },
+            {
+              "name": "Kontakt 5.vst",
+              "id": "Kontakt 5.Synth.vst",
+              "version": "5.8.1 (R43)",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "5.8.1 (R43)",
+          "bundles": [],
+          "reason": "Kontakt 5 is legacy Intel software; Kontakt 6/7 targets are separate entries."
+        }
+      }
+    },
+    {
+      "id": "kontakt-6",
+      "name": "Kontakt 6",
+      "vendor": "Native Instruments",
+      "version": "6.6.1 (R139)",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Kontakt.aaxplugin",
+          "id": "Kontakt.aaxplugin",
+          "version": "6.6.1 (R139)",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Kontakt.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt.component",
+          "id": "Kontakt.MusicDevice.component",
+          "version": "6.6.1 (R139)",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Kontakt.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt.vst",
+          "id": "Kontakt.Synth.vst",
+          "version": "6.6.1 (R139)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Kontakt.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Kontakt.vst3",
+          "id": "Kontakt.vst3",
+          "version": "6.6.1 (R139)",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Kontakt.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "6.6.1 (R139)",
+          "bundles": [
+            {
+              "name": "Kontakt.aaxplugin",
+              "id": "Kontakt.aaxplugin",
+              "version": "6.6.1 (R139)",
+              "format": "AAX"
+            },
+            {
+              "name": "Kontakt.component",
+              "id": "Kontakt.MusicDevice.component",
+              "version": "6.6.1 (R139)",
+              "format": "AU"
+            },
+            {
+              "name": "Kontakt.vst",
+              "id": "Kontakt.Synth.vst",
+              "version": "6.6.1 (R139)",
+              "format": "VST2"
+            },
+            {
+              "name": "Kontakt.vst3",
+              "id": "Kontakt.vst3",
+              "version": "6.6.1 (R139)",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "6.6.1 (R139)",
+          "bundles": [],
+          "reason": "Native Kontakt 6 is available from 6.7 onward. Obtain an entitled native installer via Native Access/account and pin its exact bundle versions."
+        }
+      }
+    },
+    {
+      "id": "kontakt-7",
+      "name": "Kontakt 7",
+      "vendor": "Native Instruments",
+      "version": "7.4.2",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "arm64",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Kontakt 7.aaxplugin",
+          "id": "Kontakt 7.aaxplugin",
+          "version": "7.4.2",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Kontakt 7.aaxplugin",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Kontakt 7.component",
+          "id": "Kontakt 7.MusicDevice.component",
+          "version": "7.4.2",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Kontakt 7.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Kontakt 7.vst3",
+          "id": "Kontakt 7.vst3",
+          "version": "7.4.2",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Kontakt 7.vst3",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "7.4.2",
+          "bundles": [
+            {
+              "name": "Kontakt 7.aaxplugin",
+              "id": "Kontakt 7.aaxplugin",
+              "version": "7.4.2",
+              "format": "AAX"
+            },
+            {
+              "name": "Kontakt 7.component",
+              "id": "Kontakt 7.MusicDevice.component",
+              "version": "7.4.2",
+              "format": "AU"
+            },
+            {
+              "name": "Kontakt 7.vst3",
+              "id": "Kontakt 7.vst3",
+              "version": "7.4.2",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "7.4.2",
+          "bundles": [
+            {
+              "name": "Kontakt 7.aaxplugin",
+              "id": "Kontakt 7.aaxplugin",
+              "version": "7.4.2",
+              "format": "AAX"
+            },
+            {
+              "name": "Kontakt 7.component",
+              "id": "Kontakt 7.MusicDevice.component",
+              "version": "7.4.2",
+              "format": "AU"
+            },
+            {
+              "name": "Kontakt 7.vst3",
+              "id": "Kontakt 7.vst3",
+              "version": "7.4.2",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Selects the verified native formats from the observed universal binaries; other baseline formats remain in the inventory."
+        }
+      }
+    },
+    {
+      "id": "massive",
+      "name": "Massive",
+      "vendor": "Native Instruments",
+      "version": "1.5.12+31",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "arm64",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Massive.aaxplugin",
+          "id": "Massive.aaxplugin",
+          "version": "1.5.12+31",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Massive.aaxplugin",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Massive.component",
+          "id": "Massive.MusicDevice.component",
+          "version": "1.5.12+31",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Massive.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Massive.vst",
+          "id": "Massive.Synth.vst",
+          "version": "1.5.12+31",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Massive.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Massive.vst3",
+          "id": "Massive.vst3",
+          "version": "1.5.12+31",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Massive.vst3",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.5.12+31",
+          "bundles": [
+            {
+              "name": "Massive.aaxplugin",
+              "id": "Massive.aaxplugin",
+              "version": "1.5.12+31",
+              "format": "AAX"
+            },
+            {
+              "name": "Massive.component",
+              "id": "Massive.MusicDevice.component",
+              "version": "1.5.12+31",
+              "format": "AU"
+            },
+            {
+              "name": "Massive.vst",
+              "id": "Massive.Synth.vst",
+              "version": "1.5.12+31",
+              "format": "VST2"
+            },
+            {
+              "name": "Massive.vst3",
+              "id": "Massive.vst3",
+              "version": "1.5.12+31",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "1.5.12+31",
+          "bundles": [
+            {
+              "name": "Massive.aaxplugin",
+              "id": "Massive.aaxplugin",
+              "version": "1.5.12+31",
+              "format": "AAX"
+            },
+            {
+              "name": "Massive.component",
+              "id": "Massive.MusicDevice.component",
+              "version": "1.5.12+31",
+              "format": "AU"
+            },
+            {
+              "name": "Massive.vst3",
+              "id": "Massive.vst3",
+              "version": "1.5.12+31",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Selects the verified native formats from the observed universal binaries; other baseline formats remain in the inventory."
+        }
+      }
+    },
+    {
+      "id": "melodyne-4",
+      "name": "Melodyne 4",
+      "vendor": "Celemony",
+      "version": "4.2.4",
+      "source": {
+        "page": "https://www.celemony.com/login",
+        "instructions": "Sign into myCelemony and obtain Melodyne 4.2.4 for your edition."
+      },
+      "license": "Use Melodyne activation / myCelemony or iLok if your license supports it.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Melodyne.aaxplugin",
+          "id": "com.celemony.melodyne.aax",
+          "version": "4.2.4",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Melodyne.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Melodyne.component",
+          "id": "com.celemony.melodyne.au",
+          "version": "4.2.4",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Melodyne.component",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Melodyne.dpm",
+          "id": "com.celemony.melodyne.rtas",
+          "version": "4.2.4",
+          "format": "RTAS",
+          "observedPath": "/Library/Application Support/Digidesign/Plug-Ins/Melodyne.dpm",
+          "architecturesObserved": [
+            "i386"
+          ]
+        },
+        {
+          "name": "Melodyne.vst",
+          "id": "com.celemony.melodyne.vst",
+          "version": "4.2.4",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Melodyne.vst",
+          "architecturesObserved": [
+            "i386"
+          ]
+        },
+        {
+          "name": "Melodyne.vst3",
+          "id": "com.celemony.melodyne.vst3",
+          "version": "4.2.4",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Melodyne.vst3",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "4.2.4",
+          "bundles": [
+            {
+              "name": "Melodyne.aaxplugin",
+              "id": "com.celemony.melodyne.aax",
+              "version": "4.2.4",
+              "format": "AAX"
+            },
+            {
+              "name": "Melodyne.component",
+              "id": "com.celemony.melodyne.au",
+              "version": "4.2.4",
+              "format": "AU"
+            },
+            {
+              "name": "Melodyne.vst3",
+              "id": "com.celemony.melodyne.vst3",
+              "version": "4.2.4",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "4.2.4",
+          "bundles": [],
+          "reason": "Native Melodyne requires a later generation; confirm an upgrade entitlement before adding a separate target."
+        }
+      }
+    },
+    {
+      "id": "midi-bass",
+      "name": "MIDI Bass",
+      "vendor": "Jam Origin",
+      "version": "1.2.1",
+      "source": {
+        "page": "https://jam.live/downloads/",
+        "instructions": "Obtain MIDI Guitar 2 / MIDI Bass 1 from Jam Origin or your original purchase downloads; the current site also offers generation 3."
+      },
+      "license": "Import your vendor-issued license through the Jam Origin UI. Do not infer a license-file destination.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "MIDI Bass.component",
+          "id": "com.jamorigin.midibass",
+          "version": "1.2.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/MIDI Bass.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "MIDI Bass.vst",
+          "id": "com.jamorigin.midibass",
+          "version": "1.2.1",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/MIDI Bass.vst",
+          "architecturesObserved": [
+            "x86_64",
+            "i386"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.2.1",
+          "bundles": [
+            {
+              "name": "MIDI Bass.component",
+              "id": "com.jamorigin.midibass",
+              "version": "1.2.1",
+              "format": "AU"
+            },
+            {
+              "name": "MIDI Bass.vst",
+              "id": "com.jamorigin.midibass",
+              "version": "1.2.1",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "1.2.1",
+          "bundles": [],
+          "reason": "Obtain and verify a native Jam Origin distribution; do not substitute generation 3 silently."
+        }
+      }
+    },
+    {
+      "id": "midi-guitar-2",
+      "name": "MIDI Guitar 2",
+      "vendor": "Jam Origin",
+      "version": "2.2.1",
+      "source": {
+        "page": "https://jam.live/downloads/",
+        "instructions": "Obtain MIDI Guitar 2 / MIDI Bass 1 from Jam Origin or your original purchase downloads; the current site also offers generation 3."
+      },
+      "license": "Import your vendor-issued license through the Jam Origin UI. Do not infer a license-file destination.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "MIDI Guitar 2.component",
+          "id": "com.jamorigin.midiguitar2",
+          "version": "2.2.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/MIDI Guitar 2.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "MIDI Guitar 2.vst",
+          "id": "com.jamorigin.midiguitar2",
+          "version": "2.2.1",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/MIDI Guitar 2.vst",
+          "architecturesObserved": [
+            "x86_64",
+            "i386"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "2.2.1",
+          "bundles": [
+            {
+              "name": "MIDI Guitar 2.component",
+              "id": "com.jamorigin.midiguitar2",
+              "version": "2.2.1",
+              "format": "AU"
+            },
+            {
+              "name": "MIDI Guitar 2.vst",
+              "id": "com.jamorigin.midiguitar2",
+              "version": "2.2.1",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "2.2.1",
+          "bundles": [],
+          "reason": "Obtain and verify the native Jam Origin installer for this generation or explicitly choose a newer generation."
+        }
+      }
+    },
+    {
+      "id": "nectar-2",
+      "name": "Nectar 2",
+      "vendor": "iZotope",
+      "version": "2.0.4",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZNectar2AAXHook.aaxplugin",
+          "id": "com.izotope.audioplugins.AAX.Nectar2",
+          "version": "2.0.4",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZNectar2AAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZNectar2AUHook.component",
+          "id": "com.izotope.audioplugins.AU.Nectar2",
+          "version": "2.0.4",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZNectar2AUHook.component",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZNectar2PTHook.dpm",
+          "id": "com.izotope.audioplugins.PT.Nectar2",
+          "version": "2.0.4",
+          "format": "RTAS",
+          "observedPath": "/Library/Application Support/Digidesign/Plug-Ins/iZNectar2PTHook.dpm",
+          "architecturesObserved": [
+            "i386"
+          ]
+        },
+        {
+          "name": "iZotope Nectar 2.vst",
+          "id": "com.izotope.audioplugins.VST.Nectar2",
+          "version": "2.0.4",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/iZotope Nectar 2.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZotope Nectar 2.vst3",
+          "id": "com.izotope.audioplugins.VST.Nectar2",
+          "version": "2.0.4",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/iZotope Nectar 2.vst3",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "2.0.4",
+          "bundles": [
+            {
+              "name": "iZNectar2AAXHook.aaxplugin",
+              "id": "com.izotope.audioplugins.AAX.Nectar2",
+              "version": "2.0.4",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNectar2AUHook.component",
+              "id": "com.izotope.audioplugins.AU.Nectar2",
+              "version": "2.0.4",
+              "format": "AU"
+            },
+            {
+              "name": "iZotope Nectar 2.vst",
+              "id": "com.izotope.audioplugins.VST.Nectar2",
+              "version": "2.0.4",
+              "format": "VST2"
+            },
+            {
+              "name": "iZotope Nectar 2.vst3",
+              "id": "com.izotope.audioplugins.VST.Nectar2",
+              "version": "2.0.4",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "2.0.4",
+          "bundles": [],
+          "reason": "No native Nectar 2 build verified; do not substitute Nectar 3/4 automatically."
+        }
+      }
+    },
+    {
+      "id": "nectar-3",
+      "name": "Nectar 3",
+      "vendor": "iZotope",
+      "version": "3.6.0",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZNectar3AAXHook.aaxplugin",
+          "id": "com.izotope.AAX.NECTAR3",
+          "version": "3.6.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZNectar3AAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZNectar3AUHook.component",
+          "id": "com.izotope.AU.NECTAR3",
+          "version": "3.6.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZNectar3AUHook.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Nectar 3.vst",
+          "id": "com.izotope.VST.NECTAR3",
+          "version": "3.6.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Nectar 3.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Nectar 3.vst3",
+          "id": "com.izotope.VST.NECTAR3",
+          "version": "3.6.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Nectar 3.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "3.6.0",
+          "bundles": [
+            {
+              "name": "iZNectar3AAXHook.aaxplugin",
+              "id": "com.izotope.AAX.NECTAR3",
+              "version": "3.6.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNectar3AUHook.component",
+              "id": "com.izotope.AU.NECTAR3",
+              "version": "3.6.0",
+              "format": "AU"
+            },
+            {
+              "name": "Nectar 3.vst",
+              "id": "com.izotope.VST.NECTAR3",
+              "version": "3.6.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Nectar 3.vst3",
+              "id": "com.izotope.VST.NECTAR3",
+              "version": "3.6.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "3.9.0",
+          "bundles": [
+            {
+              "name": "iZNectar3AAXHook.aaxplugin",
+              "id": "com.izotope.AAX.NECTAR3",
+              "version": "3.9.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNectar3AUHook.component",
+              "id": "com.izotope.AU.NECTAR3",
+              "version": "3.9.0",
+              "format": "AU"
+            },
+            {
+              "name": "Nectar 3.vst3",
+              "id": "com.izotope.VST.NECTAR3",
+              "version": "3.9.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Signed vendor installer app verified; native plugin support is based on vendor documentation. Post-install bundle checks remain required. Edition: Nectar 3 Plus. Confirm entitlement; an interactive vendor wizard is required.",
+          "compatibilitySource": "https://support.izotope.com/hc/en-us/articles/7445672367261-Compatibility-of-iZotope-Products-on-macOS"
+        }
+      }
+    },
+    {
+      "id": "neutron-3",
+      "name": "Neutron 3",
+      "vendor": "iZotope",
+      "version": "3.7.0",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZNeutron3AAXHook.aaxplugin",
+          "id": "com.izotope.AAX.NEUTRON3MS",
+          "version": "3.7.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZNeutron3AAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZNeutron3VisualMixerAAXHook.aaxplugin",
+          "id": "com.izotope.AAX.VISUALMIXER",
+          "version": "3.7.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZNeutron3VisualMixerAAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZNeutron3AUHook.component",
+          "id": "com.izotope.AU.NEUTRON3MS",
+          "version": "3.7.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZNeutron3AUHook.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZNeutron3VisualMixerAUHook.component",
+          "id": "com.izotope.AU.VISUALMIXER",
+          "version": "3.7.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZNeutron3VisualMixerAUHook.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Neutron 3 Visual Mixer.vst",
+          "id": "com.izotope.VST.VISUALMIXER",
+          "version": "3.7.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Neutron 3 Visual Mixer.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Neutron 3.vst",
+          "id": "com.izotope.VST.NEUTRON3MS",
+          "version": "3.7.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Neutron 3.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Neutron 3 Visual Mixer.vst3",
+          "id": "com.izotope.VST.VISUALMIXER",
+          "version": "3.7.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Neutron 3 Visual Mixer.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Neutron 3.vst3",
+          "id": "com.izotope.VST.NEUTRON3MS",
+          "version": "3.7.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Neutron 3.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "3.7.0",
+          "bundles": [
+            {
+              "name": "iZNeutron3AAXHook.aaxplugin",
+              "id": "com.izotope.AAX.NEUTRON3MS",
+              "version": "3.7.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNeutron3VisualMixerAAXHook.aaxplugin",
+              "id": "com.izotope.AAX.VISUALMIXER",
+              "version": "3.7.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNeutron3AUHook.component",
+              "id": "com.izotope.AU.NEUTRON3MS",
+              "version": "3.7.0",
+              "format": "AU"
+            },
+            {
+              "name": "iZNeutron3VisualMixerAUHook.component",
+              "id": "com.izotope.AU.VISUALMIXER",
+              "version": "3.7.0",
+              "format": "AU"
+            },
+            {
+              "name": "Neutron 3 Visual Mixer.vst",
+              "id": "com.izotope.VST.VISUALMIXER",
+              "version": "3.7.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Neutron 3.vst",
+              "id": "com.izotope.VST.NEUTRON3MS",
+              "version": "3.7.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Neutron 3 Visual Mixer.vst3",
+              "id": "com.izotope.VST.VISUALMIXER",
+              "version": "3.7.0",
+              "format": "VST3"
+            },
+            {
+              "name": "Neutron 3.vst3",
+              "id": "com.izotope.VST.NEUTRON3MS",
+              "version": "3.7.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "3.10.0",
+          "bundles": [
+            {
+              "name": "iZNeutron3AAXHook.aaxplugin",
+              "id": "com.izotope.AAX.NEUTRON3MS",
+              "version": "3.10.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNeutron3VisualMixerAAXHook.aaxplugin",
+              "id": "com.izotope.AAX.VISUALMIXER",
+              "version": "3.10.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZNeutron3AUHook.component",
+              "id": "com.izotope.AU.NEUTRON3MS",
+              "version": "3.10.0",
+              "format": "AU"
+            },
+            {
+              "name": "iZNeutron3VisualMixerAUHook.component",
+              "id": "com.izotope.AU.VISUALMIXER",
+              "version": "3.10.0",
+              "format": "AU"
+            },
+            {
+              "name": "Neutron 3 Visual Mixer.vst3",
+              "id": "com.izotope.VST.VISUALMIXER",
+              "version": "3.10.0",
+              "format": "VST3"
+            },
+            {
+              "name": "Neutron 3.vst3",
+              "id": "com.izotope.VST.NEUTRON3MS",
+              "version": "3.10.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Signed vendor installer app verified; native plugin support is based on vendor documentation. Post-install bundle checks remain required. Edition: Neutron 3 Standard. Confirm entitlement; an interactive vendor wizard is required.",
+          "compatibilitySource": "https://support.izotope.com/hc/en-us/articles/7445672367261-Compatibility-of-iZotope-Products-on-macOS"
+        }
+      }
+    },
+    {
+      "id": "ozone-5",
+      "name": "Ozone 5",
+      "vendor": "iZotope",
+      "version": "5.0.5",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs. The official 5.05b installer was found but pkgutil rejected its expired signature on the inventory host; no automatic recipe is enabled."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZOzone5AAXHook.aaxplugin",
+          "id": "com.izotope.audioplugins.AAX.Ozone5",
+          "version": "5.0.5",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZOzone5AAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZOzone5AUHook.component",
+          "id": "com.izotope.audioplugins.AU.Ozone5",
+          "version": "5.0.5",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZOzone5AUHook.component",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZOzone5PTHook.dpm",
+          "id": "com.izotope.audioplugins.PT.Ozone5",
+          "version": "5.0.5",
+          "format": "RTAS",
+          "observedPath": "/Library/Application Support/Digidesign/Plug-Ins/iZOzone5PTHook.dpm",
+          "architecturesObserved": [
+            "i386"
+          ]
+        },
+        {
+          "name": "iZotope Ozone 5.vst",
+          "id": "com.izotope.audioplugins.VST.Ozone5",
+          "version": "5.0.5",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/iZotope Ozone 5.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZotope Ozone 5.vst3",
+          "id": "com.izotope.audioplugins.VST.Ozone5",
+          "version": "5.0.5",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/iZotope Ozone 5.vst3",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "5.0.5",
+          "bundles": [
+            {
+              "name": "iZOzone5AAXHook.aaxplugin",
+              "id": "com.izotope.audioplugins.AAX.Ozone5",
+              "version": "5.0.5",
+              "format": "AAX"
+            },
+            {
+              "name": "iZOzone5AUHook.component",
+              "id": "com.izotope.audioplugins.AU.Ozone5",
+              "version": "5.0.5",
+              "format": "AU"
+            },
+            {
+              "name": "iZotope Ozone 5.vst",
+              "id": "com.izotope.audioplugins.VST.Ozone5",
+              "version": "5.0.5",
+              "format": "VST2"
+            },
+            {
+              "name": "iZotope Ozone 5.vst3",
+              "id": "com.izotope.audioplugins.VST.Ozone5",
+              "version": "5.0.5",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target. The available official installer fails signature validation; installation remains blocked."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "5.0.5",
+          "bundles": [],
+          "reason": "No native Ozone 5 build verified. Its legacy installer also fails pkgutil signature validation on this host."
+        }
+      }
+    },
+    {
+      "id": "ozone-9",
+      "name": "Ozone 9",
+      "vendor": "iZotope",
+      "version": "9.1.0",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZOzone9AAXHook.aaxplugin",
+          "id": "com.izotope.audioplugins.AAX.OZONE9MS",
+          "version": "9.1.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZOzone9AAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZOzone9AUHook.component",
+          "id": "com.izotope.audioplugins.AU.OZONE9MS",
+          "version": "9.1.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZOzone9AUHook.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Ozone 9.vst",
+          "id": "com.izotope.audioplugins.VST.OZONE9MS",
+          "version": "9.1.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Ozone 9.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Ozone 9.vst3",
+          "id": "com.izotope.audioplugins.VST.OZONE9MS",
+          "version": "9.1.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Ozone 9.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "9.1.0",
+          "bundles": [
+            {
+              "name": "iZOzone9AAXHook.aaxplugin",
+              "id": "com.izotope.audioplugins.AAX.OZONE9MS",
+              "version": "9.1.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZOzone9AUHook.component",
+              "id": "com.izotope.audioplugins.AU.OZONE9MS",
+              "version": "9.1.0",
+              "format": "AU"
+            },
+            {
+              "name": "Ozone 9.vst",
+              "id": "com.izotope.audioplugins.VST.OZONE9MS",
+              "version": "9.1.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Ozone 9.vst3",
+              "id": "com.izotope.audioplugins.VST.OZONE9MS",
+              "version": "9.1.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "9.13.0",
+          "bundles": [
+            {
+              "name": "iZOzone9AAXHook.aaxplugin",
+              "id": "com.izotope.audioplugins.AAX.OZONE9MS",
+              "version": "9.13.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZOzone9AUHook.component",
+              "id": "com.izotope.audioplugins.AU.OZONE9MS",
+              "version": "9.13.0",
+              "format": "AU"
+            },
+            {
+              "name": "Ozone 9.vst3",
+              "id": "com.izotope.audioplugins.VST.OZONE9MS",
+              "version": "9.13.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Signed vendor installer app verified; native plugin support is based on vendor documentation. Post-install bundle checks remain required. Edition: Ozone 9 Standard. Confirm entitlement; an interactive vendor wizard is required.",
+          "compatibilitySource": "https://support.izotope.com/hc/en-us/articles/7445672367261-Compatibility-of-iZotope-Products-on-macOS"
+        }
+      }
+    },
+    {
+      "id": "reaktor-5",
+      "name": "Reaktor 5",
+      "vendor": "Native Instruments",
+      "version": "5.9.4 (R1512)",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "i386",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Reaktor5.aaxplugin",
+          "id": "Reaktor5.aaxplugin",
+          "version": "5.9.4 (R1512)",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Reaktor5.aaxplugin",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5.component",
+          "id": "Reaktor5.MusicDevice.component",
+          "version": "5.9.4 (R1512)",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Reaktor5.component",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5 16out.vst",
+          "id": "Reaktor5.Synth16.vst",
+          "version": "5.9.4 (R1512)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor5 16out.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5 FX 16x16.vst",
+          "id": "Reaktor5.FX16x16.vst",
+          "version": "5.9.4 (R1512)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor5 FX 16x16.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5 FX 2x8.vst",
+          "id": "Reaktor5.FX2x8.vst",
+          "version": "5.9.4 (R1512)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor5 FX 2x8.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5 FX.vst",
+          "id": "Reaktor5.FX.vst",
+          "version": "5.9.4 (R1512)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor5 FX.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5 Surround.vst",
+          "id": "Reaktor5.Surround.vst",
+          "version": "5.9.4 (R1512)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor5 Surround.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor5.vst",
+          "id": "Reaktor5.Synth.vst",
+          "version": "5.9.4 (R1512)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor5.vst",
+          "architecturesObserved": [
+            "i386",
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "5.9.4 (R1512)",
+          "bundles": [
+            {
+              "name": "Reaktor5.aaxplugin",
+              "id": "Reaktor5.aaxplugin",
+              "version": "5.9.4 (R1512)",
+              "format": "AAX"
+            },
+            {
+              "name": "Reaktor5.component",
+              "id": "Reaktor5.MusicDevice.component",
+              "version": "5.9.4 (R1512)",
+              "format": "AU"
+            },
+            {
+              "name": "Reaktor5 16out.vst",
+              "id": "Reaktor5.Synth16.vst",
+              "version": "5.9.4 (R1512)",
+              "format": "VST2"
+            },
+            {
+              "name": "Reaktor5 FX 16x16.vst",
+              "id": "Reaktor5.FX16x16.vst",
+              "version": "5.9.4 (R1512)",
+              "format": "VST2"
+            },
+            {
+              "name": "Reaktor5 FX 2x8.vst",
+              "id": "Reaktor5.FX2x8.vst",
+              "version": "5.9.4 (R1512)",
+              "format": "VST2"
+            },
+            {
+              "name": "Reaktor5 FX.vst",
+              "id": "Reaktor5.FX.vst",
+              "version": "5.9.4 (R1512)",
+              "format": "VST2"
+            },
+            {
+              "name": "Reaktor5 Surround.vst",
+              "id": "Reaktor5.Surround.vst",
+              "version": "5.9.4 (R1512)",
+              "format": "VST2"
+            },
+            {
+              "name": "Reaktor5.vst",
+              "id": "Reaktor5.Synth.vst",
+              "version": "5.9.4 (R1512)",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "5.9.4 (R1512)",
+          "bundles": [],
+          "reason": "Reaktor 5 is legacy Intel software; Reaktor 6 is a separate product entry."
+        }
+      }
+    },
+    {
+      "id": "reaktor-6",
+      "name": "Reaktor 6",
+      "vendor": "Native Instruments",
+      "version": "6.3.1 (R6)",
+      "source": {
+        "page": "https://www.native-instruments.com/pages/downloads",
+        "instructions": "Install Native Access and sign in. Enable legacy products as needed. Obtain the exact cataloged version from your account or NI legacy downloads; do not substitute the latest major version."
+      },
+      "license": "Native Access account activation; legacy availability and machine support must be checked.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Reaktor 6.aaxplugin",
+          "id": "Reaktor 6.aaxplugin",
+          "version": "6.3.1 (R6)",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Reaktor 6.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor 6.component",
+          "id": "Reaktor 6.MusicDevice.component",
+          "version": "6.3.1 (R6)",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Reaktor 6.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor 6 FX.vst",
+          "id": "Reaktor 6.FX16x16.vst",
+          "version": "6.3.1 (R6)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor 6 FX.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Reaktor 6.vst",
+          "id": "Reaktor 6.Synth.vst",
+          "version": "6.3.1 (R6)",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Reaktor 6.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "6.3.1 (R6)",
+          "bundles": [
+            {
+              "name": "Reaktor 6.aaxplugin",
+              "id": "Reaktor 6.aaxplugin",
+              "version": "6.3.1 (R6)",
+              "format": "AAX"
+            },
+            {
+              "name": "Reaktor 6.component",
+              "id": "Reaktor 6.MusicDevice.component",
+              "version": "6.3.1 (R6)",
+              "format": "AU"
+            },
+            {
+              "name": "Reaktor 6 FX.vst",
+              "id": "Reaktor 6.FX16x16.vst",
+              "version": "6.3.1 (R6)",
+              "format": "VST2"
+            },
+            {
+              "name": "Reaktor 6.vst",
+              "id": "Reaktor 6.Synth.vst",
+              "version": "6.3.1 (R6)",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "6.3.1 (R6)",
+          "bundles": [],
+          "reason": "Native Reaktor 6 is available in the 6.5 series. Obtain the entitled installer through Native Access/account and pin its exact bundle versions."
+        }
+      }
+    },
+    {
+      "id": "relay",
+      "name": "Relay",
+      "vendor": "iZotope",
+      "version": "1.1.0",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZRelayAAXHook.aaxplugin",
+          "id": "com.izotope.AAX.RELAY",
+          "version": "1.1.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZRelayAAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZRelayAUHook.component",
+          "id": "com.izotope.AU.RELAY",
+          "version": "1.1.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZRelayAUHook.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Relay.vst",
+          "id": "com.izotope.VST.RELAY",
+          "version": "1.1.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Relay.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Relay.vst3",
+          "id": "com.izotope.VST.RELAY",
+          "version": "1.1.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/Relay.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.1.0",
+          "bundles": [
+            {
+              "name": "iZRelayAAXHook.aaxplugin",
+              "id": "com.izotope.AAX.RELAY",
+              "version": "1.1.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZRelayAUHook.component",
+              "id": "com.izotope.AU.RELAY",
+              "version": "1.1.0",
+              "format": "AU"
+            },
+            {
+              "name": "Relay.vst",
+              "id": "com.izotope.VST.RELAY",
+              "version": "1.1.0",
+              "format": "VST2"
+            },
+            {
+              "name": "Relay.vst3",
+              "id": "com.izotope.VST.RELAY",
+              "version": "1.1.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "1.1.0",
+          "bundles": [],
+          "reason": "Native Relay updates exist. Pin the native vendor distribution rather than the observed Intel 1.1.0 build."
+        }
+      }
+    },
+    {
+      "id": "rx-8-breath-control",
+      "name": "RX 8 Breath Control",
+      "vendor": "iZotope",
+      "version": "8.1.0",
+      "source": {
+        "page": "https://www.izotope.com/pages/legacy-products",
+        "instructions": "Use the official legacy downloads or Product Portal for this product generation. Confirm edition and version; several editions share plugin bundle IDs."
+      },
+      "license": "Product Portal / in-product authorization or iLok where supported; entitlement is not inferred from installed binaries.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "iZRX8BreathControlAAXHook.aaxplugin",
+          "id": "com.izotope.AAX.RX8BREATHCTRL",
+          "version": "8.1.0",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/iZRX8BreathControlAAXHook.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "iZRX8BreathControlAUHook.component",
+          "id": "com.izotope.AU.RX8BREATHCTRL",
+          "version": "8.1.0",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/iZRX8BreathControlAUHook.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "RX 8 Breath Control.vst",
+          "id": "com.izotope.VST.RX8BREATHCTRL",
+          "version": "8.1.0",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/RX 8 Breath Control.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "RX 8 Breath Control.vst3",
+          "id": "com.izotope.VST.RX8BREATHCTRL",
+          "version": "8.1.0",
+          "format": "VST3",
+          "observedPath": "/Library/Audio/Plug-Ins/VST3/RX 8 Breath Control.vst3",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "8.1.0",
+          "bundles": [
+            {
+              "name": "iZRX8BreathControlAAXHook.aaxplugin",
+              "id": "com.izotope.AAX.RX8BREATHCTRL",
+              "version": "8.1.0",
+              "format": "AAX"
+            },
+            {
+              "name": "iZRX8BreathControlAUHook.component",
+              "id": "com.izotope.AU.RX8BREATHCTRL",
+              "version": "8.1.0",
+              "format": "AU"
+            },
+            {
+              "name": "RX 8 Breath Control.vst",
+              "id": "com.izotope.VST.RX8BREATHCTRL",
+              "version": "8.1.0",
+              "format": "VST2"
+            },
+            {
+              "name": "RX 8 Breath Control.vst3",
+              "id": "com.izotope.VST.RX8BREATHCTRL",
+              "version": "8.1.0",
+              "format": "VST3"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "8.1.0",
+          "bundles": [],
+          "reason": "No native RX 8 Breath Control installer verified; do not infer compatibility from RX Elements or a later RX generation."
+        }
+      }
+    },
+    {
+      "id": "satellite",
+      "name": "Satellite",
+      "vendor": "Mixed In Key",
+      "version": "2.2.1",
+      "source": {
+        "page": "https://mixedinkey.com/satellite/download/",
+        "instructions": "Obtain Satellite 2.2.1 from Mixed In Key. The bundle contains Audio, MIDI and Sessions plugins."
+      },
+      "license": "Activate with your own Mixed In Key account/VIP code in the vendor UI.",
+      "architecturesObserved": [
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Satellite Audio.aaxplugin",
+          "id": "com.mixedinkey.aax.Satellite.Audio",
+          "version": "2.2.1",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Satellite Audio.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite MIDI.aaxplugin",
+          "id": "com.mixedinkey.aax.Satellite.MIDI",
+          "version": "2.2.1",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Satellite MIDI.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite Sessions.aaxplugin",
+          "id": "com.mixedinkey.aax.Satellite.Sessions",
+          "version": "2.2.1",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Satellite Sessions.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite Audio.component",
+          "id": "com.mixedinkey.au.fx.Satellite.Audio",
+          "version": "2.2.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Satellite Audio.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite MIDI FX.component",
+          "id": "com.mixedinkey.au.fx.Satellite.MIDIFX.MIDI",
+          "version": "2.2.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Satellite MIDI FX.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite MIDI.component",
+          "id": "com.mixedinkey.au.audio.Satellite.MIDI",
+          "version": "2.2.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Satellite MIDI.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite Sessions.component",
+          "id": "com.mixedinkey.au.fx.Satellite.Sessions",
+          "version": "2.2.1",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Satellite Sessions.component",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite Audio.vst",
+          "id": "com.mixedinkey.vst.Satellite.Audio",
+          "version": "2.2.1",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Satellite Audio.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite MIDI.vst",
+          "id": "com.mixedinkey.vst.Satellite.MIDI",
+          "version": "2.2.1",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Satellite MIDI.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Satellite Sessions.vst",
+          "id": "com.mixedinkey.vst.Satellite.Sessions",
+          "version": "2.2.1",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Satellite Sessions.vst",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "2.2.1",
+          "bundles": [
+            {
+              "name": "Satellite Audio.aaxplugin",
+              "id": "com.mixedinkey.aax.Satellite.Audio",
+              "version": "2.2.1",
+              "format": "AAX"
+            },
+            {
+              "name": "Satellite MIDI.aaxplugin",
+              "id": "com.mixedinkey.aax.Satellite.MIDI",
+              "version": "2.2.1",
+              "format": "AAX"
+            },
+            {
+              "name": "Satellite Sessions.aaxplugin",
+              "id": "com.mixedinkey.aax.Satellite.Sessions",
+              "version": "2.2.1",
+              "format": "AAX"
+            },
+            {
+              "name": "Satellite Audio.component",
+              "id": "com.mixedinkey.au.fx.Satellite.Audio",
+              "version": "2.2.1",
+              "format": "AU"
+            },
+            {
+              "name": "Satellite MIDI FX.component",
+              "id": "com.mixedinkey.au.fx.Satellite.MIDIFX.MIDI",
+              "version": "2.2.1",
+              "format": "AU"
+            },
+            {
+              "name": "Satellite MIDI.component",
+              "id": "com.mixedinkey.au.audio.Satellite.MIDI",
+              "version": "2.2.1",
+              "format": "AU"
+            },
+            {
+              "name": "Satellite Sessions.component",
+              "id": "com.mixedinkey.au.fx.Satellite.Sessions",
+              "version": "2.2.1",
+              "format": "AU"
+            },
+            {
+              "name": "Satellite Audio.vst",
+              "id": "com.mixedinkey.vst.Satellite.Audio",
+              "version": "2.2.1",
+              "format": "VST2"
+            },
+            {
+              "name": "Satellite MIDI.vst",
+              "id": "com.mixedinkey.vst.Satellite.MIDI",
+              "version": "2.2.1",
+              "format": "VST2"
+            },
+            {
+              "name": "Satellite Sessions.vst",
+              "id": "com.mixedinkey.vst.Satellite.Sessions",
+              "version": "2.2.1",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": false,
+          "architecture": "arm64",
+          "version": "2.2.1",
+          "bundles": [],
+          "reason": "No native Satellite 2.2.1 artifact verified; acquire a native vendor build before enabling this target."
+        }
+      }
+    },
+    {
+      "id": "serum",
+      "name": "Serum",
+      "vendor": "Xfer Records",
+      "version": "1.334",
+      "source": {
+        "page": "https://xferrecords.com/my_account",
+        "instructions": "Sign in to your Xfer account and obtain Serum 1 (not Serum 2). If rented through Splice, use your Splice entitlement workflow."
+      },
+      "license": "Use the Serum 1 serial in the plugin UI or Splice activation for an applicable rental.",
+      "architecturesObserved": [
+        "arm64",
+        "x86_64"
+      ],
+      "bundles": [
+        {
+          "name": "Serum.aaxplugin",
+          "id": "com.xfer.serum.AAX",
+          "version": "1.334",
+          "format": "AAX",
+          "observedPath": "/Library/Application Support/Avid/Audio/Plug-Ins/Serum.aaxplugin",
+          "architecturesObserved": [
+            "x86_64"
+          ]
+        },
+        {
+          "name": "Serum.component",
+          "id": "com.xfer.serum.AU",
+          "version": "1.334",
+          "format": "AU",
+          "observedPath": "/Library/Audio/Plug-Ins/Components/Serum.component",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        },
+        {
+          "name": "Serum.vst",
+          "id": "com.xfer.serum.VST",
+          "version": "1.334",
+          "format": "VST2",
+          "observedPath": "/Library/Audio/Plug-Ins/VST/Serum.vst",
+          "architecturesObserved": [
+            "x86_64",
+            "arm64"
+          ]
+        }
+      ],
+      "targets": {
+        "x86_64-darwin": {
+          "supported": true,
+          "architecture": "x86_64",
+          "version": "1.334",
+          "bundles": [
+            {
+              "name": "Serum.aaxplugin",
+              "id": "com.xfer.serum.AAX",
+              "version": "1.334",
+              "format": "AAX"
+            },
+            {
+              "name": "Serum.component",
+              "id": "com.xfer.serum.AU",
+              "version": "1.334",
+              "format": "AU"
+            },
+            {
+              "name": "Serum.vst",
+              "id": "com.xfer.serum.VST",
+              "version": "1.334",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Preserves the observed Intel version and 64-bit formats. Any obsolete 32-bit-only bundles remain in the inventory, not the installation target."
+        },
+        "aarch64-darwin": {
+          "supported": true,
+          "architecture": "arm64",
+          "version": "1.334",
+          "bundles": [
+            {
+              "name": "Serum.component",
+              "id": "com.xfer.serum.AU",
+              "version": "1.334",
+              "format": "AU"
+            },
+            {
+              "name": "Serum.vst",
+              "id": "com.xfer.serum.VST",
+              "version": "1.334",
+              "format": "VST2"
+            }
+          ],
+          "reason": "Selects the verified native formats from the observed universal binaries; other baseline formats remain in the inventory."
+        }
+      }
+    }
+  ]
+}

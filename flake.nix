@@ -110,7 +110,15 @@
               # The local build scripts set system.primaryUser to whoever runs them.
               user = if config.system.primaryUser != null then config.system.primaryUser else primaryUser;
               isDefaultUser = user == primaryUser;
+              userHome = if isDefaultUser then home else "/Users/${user}";
               userVSCodeSettings = ./config/vscode/${user}/settings.json;
+              # Git identity and settings, for users that have a file here. Installed to the XDG
+              # location so that ~/.gitconfig stays free for machine-local overrides.
+              userGitConfig = ./config/git/${user}/config;
+              gitDotFiles = lib.optional (builtins.pathExists userGitConfig) {
+                path = "${userHome}/.config/git/config";
+                contents = builtins.readFile userGitConfig;
+              };
             in
             {
               system.activationScripts.postActivation.text = myLib.configure-environment {
@@ -118,10 +126,10 @@
                   pkgs
                   lib
                   withShell
-                  withDotFiles
                   ;
                 primaryUser = user;
-                home = if isDefaultUser then home else "/Users/${user}";
+                home = userHome;
+                withDotFiles = gitDotFiles ++ withDotFiles;
                 withVSCodeSettings =
                   if isDefaultUser then
                     withVSCodeSettings

@@ -51,6 +51,10 @@ in
 
   programs.direnv.enable = true;
 
+  # Let sudo, and so scripts/apply, authenticate with Touch ID instead of a password.
+  # sudo still falls back to the password where Touch ID is unavailable (no sensor, lid closed, SSH).
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   system.activationScripts.postActivation.text = ''
     if [ ! -d "/usr/local/share/dotnet/sdk/${dotnetSdkVersion}" ]; then
       echo "Installing official .NET SDK ${dotnetSdkVersion}..."

@@ -18,7 +18,9 @@ the user running them. Both are applied as a local module override, leaving the
 flake's shared defaults unchanged.
 `apply` records a system generation and activates the exact configuration it built.
 Dotfiles and apps are installed for the detected user; VS Code settings from
-`config/vscode/<user>/settings.json` are merged in when that file exists. Built
+`config/vscode/<user>/settings.json` are merged in when that file exists. Likewise,
+`config/git/<user>/config` is installed as `~/.config/git/config`, which sets the
+Git name and email; `~/.gitconfig` is left alone for machine-local overrides. Built
 directly from the flake, both configurations install dotfiles for `/Users/matt`.
 
 If direnv is installed, run `direnv allow` to expose `build` and `apply` as commands

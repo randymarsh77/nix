@@ -61,6 +61,7 @@ let
     dl-gha-logs
     mitmproxy
     ollama
+    _1password-cli # op
 
     # Shell
     zsh-powerlevel10k
@@ -75,6 +76,8 @@ let
     nitguard
     sourcetree
     slack
+    _1password-gui
+    tailscale-gui # app and the tailscale command
   ];
 in
 defaultPackages

@@ -13,7 +13,8 @@ final: prev: {
   csharprepl = final.callPackage ./csharprepl { };
   xstyler = final.callPackage ./xstyler { };
   peekaboo = final.callPackage ./peekaboo { };
-  tailscale-gui = final.callPackage ./tailscale { inherit (prev) tailscale-gui; };
+  blender = final.callPackage ./blender { };
+  tailscale-gui =final.callPackage ./tailscale { inherit (prev) tailscale-gui; };
 
   dotcover = final.callPackage ./resharper-tools/dotcover { };
   dotmemory = final.callPackage ./resharper-tools/dotmemory { };

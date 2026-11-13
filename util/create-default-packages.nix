@@ -76,6 +76,7 @@ let
     nitguard
     sourcetree
     slack
+    blender
     _1password-gui
     tailscale-gui # app and the tailscale command
   ];
